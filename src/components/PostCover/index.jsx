@@ -43,6 +43,8 @@ class queryWrapper extends Component {
             }
           }
         `}
+
+        
         render={data => (
           <PostCover
             fileEdges={data.allFile.edges}

@@ -72,8 +72,16 @@ module.exports = {
         color: "#c62828"
       }
     },
+    
+    //"gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+      },
+    },
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-twitter",
