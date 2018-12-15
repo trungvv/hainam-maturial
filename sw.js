@@ -26,17 +26,17 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-c1817b46845c2db26844.js"
+    "url": "webpack-runtime-686404f9205d0976b952.js"
   },
   {
-    "url": "app-6b1a04579616e872b26b.js"
+    "url": "app-a45c71cabad7cfe6e969.js"
   },
   {
-    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-62d1a7f18146ee73b1b3.js"
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-a078d6a72a292dc91fad.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ba6dcb06a84e86c3bd14e56283a8b46a"
+    "revision": "86e86c95d0ffc4336aa864f887b5ce12"
   },
   {
     "url": "static/d/520/path---offline-plugin-app-shell-fallback-a-30-c5a-NZuapzHg3X9TaN1iIixfv1W23E.json",
@@ -44,45 +44,120 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "2c6844454393bec03b0b093e2f52ae60"
+    "revision": "3467ac20572927cd9d362efc9e515b2a"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/gatsby-material-starter/offline-plugin-app-shell-fallback/index.html", {
-  whitelist: [/^([^.?]*|[^?]*\.([^.?]{5,}|html))(\?.*)?$/],
-  blacklist: [/\?(.+&)?no-cache=1$/],
-});
-
-workbox.routing.registerRoute(/\.(?:png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:/, workbox.strategies.networkFirst(), 'GET');
+workbox.routing.registerRoute(/(\.js$|\.css$|\/static\/)/, workbox.strategies.cacheFirst(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, workbox.strategies.staleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, workbox.strategies.staleWhileRevalidate(), 'GET');
 "use strict";
 
-/* global workbox */
-self.addEventListener("message", function (event) {
-  var api = event.data.api;
+/* global importScripts, workbox, idbKeyval */
+importScripts("idb-keyval-iife.min.js");
+var WHITELIST_KEY = "custom-navigation-whitelist";
+var navigationRoute = new workbox.routing.NavigationRoute(function (_ref) {
+  var event = _ref.event;
 
-  if (api === "gatsby-runtime-cache") {
-    var resources = event.data.resources;
-    var cacheName = workbox.core.cacheNames.runtime;
-    event.waitUntil(caches.open(cacheName).then(function (cache) {
-      return Promise.all(resources.map(function (resource) {
-        var request; // Some external resources don't allow
-        // CORS so get an opaque response
+  var _ref2 = new URL(event.request.url),
+      pathname = _ref2.pathname;
 
-        if (resource.match(/^https?:/)) {
-          request = fetch(resource, {
-            mode: "no-cors"
+  return idbKeyval.get(WHITELIST_KEY).then(function (customWhitelist) {
+    if (customWhitelist === void 0) {
+      customWhitelist = [];
+    }
+
+    // Respond with the offline shell if we match the custom whitelist
+    if (customWhitelist.includes(pathname)) {
+      var offlineShell = "/hainam-maturial/offline-plugin-app-shell-fallback/index.html";
+      var cacheName = workbox.core.cacheNames.precache;
+      return caches.match(offlineShell, {
+        cacheName: cacheName
+      }).then(function (cachedResponse) {
+        if (!cachedResponse) {
+          return fetch(offlineShell).then(function (response) {
+            if (response.ok) {
+              return caches.open(cacheName).then(function (cache) {
+                return (// Clone is needed because put() consumes the response body.
+                  cache.put(offlineShell, response.clone()).then(function () {
+                    return response;
+                  })
+                );
+              });
+            } else {
+              return fetch(event.request);
+            }
           });
-        } else {
-          request = fetch(resource);
         }
 
-        return request.then(function (response) {
-          return cache.put(resource, response);
-        });
-      }));
-    }));
+        return cachedResponse;
+      });
+    }
+
+    return fetch(event.request);
+  });
+});
+workbox.routing.registerRoute(navigationRoute);
+var updatingWhitelist = null;
+
+function rawWhitelistPathnames(pathnames) {
+  if (updatingWhitelist !== null) {
+    // Prevent the whitelist from being updated twice at the same time
+    return updatingWhitelist.then(function () {
+      return rawWhitelistPathnames(pathnames);
+    });
   }
+
+  updatingWhitelist = idbKeyval.get(WHITELIST_KEY).then(function (customWhitelist) {
+    if (customWhitelist === void 0) {
+      customWhitelist = [];
+    }
+
+    pathnames.forEach(function (pathname) {
+      if (!customWhitelist.includes(pathname)) customWhitelist.push(pathname);
+    });
+    return idbKeyval.set(WHITELIST_KEY, customWhitelist);
+  }).then(function () {
+    updatingWhitelist = null;
+  });
+  return updatingWhitelist;
+}
+
+function rawResetWhitelist() {
+  if (updatingWhitelist !== null) {
+    return updatingWhitelist.then(function () {
+      return rawResetWhitelist();
+    });
+  }
+
+  updatingWhitelist = idbKeyval.set(WHITELIST_KEY, []).then(function () {
+    updatingWhitelist = null;
+  });
+  return updatingWhitelist;
+}
+
+var messageApi = {
+  whitelistPathnames: function whitelistPathnames(event) {
+    var pathnames = event.data.pathnames;
+    pathnames = pathnames.map(function (_ref3) {
+      var pathname = _ref3.pathname,
+          includesPrefix = _ref3.includesPrefix;
+
+      if (!includesPrefix) {
+        return "/hainam-maturial" + pathname;
+      } else {
+        return pathname;
+      }
+    });
+    event.waitUntil(rawWhitelistPathnames(pathnames));
+  },
+  resetWhitelist: function resetWhitelist(event) {
+    event.waitUntil(rawResetWhitelist());
+  }
+};
+self.addEventListener("message", function (event) {
+  var gatsbyApi = event.data.gatsbyApi;
+  if (gatsbyApi) messageApi[gatsbyApi](event);
 });
