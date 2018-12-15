@@ -26,17 +26,17 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-686404f9205d0976b952.js"
+    "url": "webpack-runtime-93d8d63e1d87e961f359.js"
   },
   {
-    "url": "app-a45c71cabad7cfe6e969.js"
+    "url": "app-f1d6d9bd2c7934d58d46.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-a078d6a72a292dc91fad.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "86e86c95d0ffc4336aa864f887b5ce12"
+    "revision": "2df45f02311a0e4e998f0292021368bd"
   },
   {
     "url": "static/d/520/path---offline-plugin-app-shell-fallback-a-30-c5a-NZuapzHg3X9TaN1iIixfv1W23E.json",
@@ -71,7 +71,7 @@ var navigationRoute = new workbox.routing.NavigationRoute(function (_ref) {
 
     // Respond with the offline shell if we match the custom whitelist
     if (customWhitelist.includes(pathname)) {
-      var offlineShell = "/hainam-maturial/offline-plugin-app-shell-fallback/index.html";
+      var offlineShell = "/offline-plugin-app-shell-fallback/index.html";
       var cacheName = workbox.core.cacheNames.precache;
       return caches.match(offlineShell, {
         cacheName: cacheName
@@ -146,7 +146,7 @@ var messageApi = {
           includesPrefix = _ref3.includesPrefix;
 
       if (!includesPrefix) {
-        return "/hainam-maturial" + pathname;
+        return "" + pathname;
       } else {
         return pathname;
       }
