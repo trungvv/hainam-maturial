@@ -11,10 +11,11 @@ public_folder: assets
 collections:
   - name: blog
     label: "Post"
-    folder: "content"
+    folder: "content/post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "post" }
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
@@ -22,3 +23,44 @@ collections:
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/pages/home/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page" }
+          - {
+              label: "Banner Images",
+              name: "bannerImage",
+              widget: "list",
+              fields:
+                [
+                  { label: "Image", name: "image", widget: "image" },
+                  { label: "Image Description", name: "imageAlt", widget: "string" },
+                  {
+                    label: "Link Type",
+                    name: "linkType",
+                    widget: "select",
+                    options: ["internal", "external"],
+                  },
+                  {
+                    label: "Link URL",
+                    name: "linkURL",
+                    widget: "string",
+                    hint: "Use a relative URL (e.g. /about) if the link is an internal link.",
+                  }
+                ],
+            }
+          - {
+              label: "SEO & Meta",
+              name: "seo",
+              widget: "object",
+              fields:
+                [
+                  { label: "Browser Tab Title", name: "browserTitle", widget: "string"},
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Description", name: "description", widget: "string" },
+                ],
+            }

@@ -86,13 +86,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
-  const { name } = type;
-  const { createNodeField } = actions;
-  if (name === "MarkdownRemark") {
-    addSiblingNodes(createNodeField);
-  }
-};
+// exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
+//   const { name } = type;
+//   const { createNodeField } = actions;
+//   if (name === "MarkdownRemark") {
+//     addSiblingNodes(createNodeField);
+//   }
+// };
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -174,3 +174,16 @@ exports.createPages = ({ graphql, actions }) => {
     );
   });
 };
+
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src/components'),
+        templates: path.resolve(__dirname, 'src/templates'),
+        scss: path.resolve(__dirname, 'src/scss'),
+      },
+    },
+  })
+}

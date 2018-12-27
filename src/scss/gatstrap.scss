@@ -1,0 +1,183 @@
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+// Start with assigning color names to specific hex values.
+//
+// Color system
+//
+@import './colors.scss';
+
+// Reassign color vars to semantic color scheme
+$theme-colors: (
+  primary: $black,
+  secondary: $red,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $white,
+  dark: $gray-800,
+) !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-gradients: false !default;
+$enable-transitions: false !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 640px,
+//   lg: 710px,
+//   xl: 780px,
+// ) !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $white !default;
+$body-color: $gray-700 !default;
+$inverse-bg: $gray-900 !default;
+$inverse-color: $gray-600 !default;
+
+// Links
+//
+// Style anchor elements.
+$link-decoration: none !default;
+$link-hover-decoration: none !default;
+
+// Fonts
+//
+@import './fonts.scss';
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+*, *:before, *:after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+img {
+  //margin-bottom: 15px;
+  max-width: 100%;
+}
+
+// img:hover {
+//   animation: pulse 0.5s;
+// }
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.display-4 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.lead {
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+// Slick
+.slick-prev:before, .slick-next:before {
+  color: $black;
+}
+.slick-prev {
+  left: -10px;
+}
+.slick-next {
+  right: -10px;
+}
+.custom-banner {
+  max-width: 100%;
+  background: black;
+  overflow: hidden;
+}
+@media (min-width: 320px)
+{
+  .custom-banner {
+    max-height: 117px;
+  }
+}
+@media (min-width: 768px)
+{
+  .container {
+    max-width: 720px;
+  } 
+  .display-4 {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.5;
+  } 
+  .lead {
+    font-size: 1rem;
+    font-weight: 200;
+  }
+  .custom-banner {
+    max-height: 282px;
+  }
+}
+@media (min-width: 992px)
+{
+  .container {
+    max-width: 960px;
+  }
+  .display-4 {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  .custom-banner {
+    max-height: 394px;
+  }
+}
+@media (min-width: 1200px)
+{
+  .container {
+    max-width: 1140px;
+  } 
+  .display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+  .custom-banner {
+    max-height: 441px;
+  }
+}
+
