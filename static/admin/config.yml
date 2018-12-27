@@ -37,6 +37,7 @@ collections:
               widget: "list",
               fields:
                 [
+                  { label: "ID", name: "id", widget: "number" },
                   { label: "Image", name: "image", widget: "image" },
                   { label: "Image Description", name: "imageAlt", widget: "string" },
                   {

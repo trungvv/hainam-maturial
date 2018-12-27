@@ -1,15 +1,18 @@
 ---
 templateKey: home-page
 bannerImage:
-  - image: /assets/banner2.jpg
+  - id: 1
+    image: /assets/banner2.jpg
     imageAlt: JavaScript Wakanda
     linkType: internal
     linkURL: /
-  - image: /assets/banner1.jpg
+  - id: 2
+    image: /assets/banner1.jpg
     imageAlt: JavaScript Wakanda
     linkType: internal
     linkURL: /
-  - image: /assets/3.jpg
+  - id: 3
+    image: /assets/3.jpg
     imageAlt: JavaScript Wakanda
     linkType: internal
     linkURL: /
