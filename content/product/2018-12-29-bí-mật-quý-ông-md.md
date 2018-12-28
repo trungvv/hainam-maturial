@@ -12,7 +12,7 @@ tags:
   - phim
   - sitcom
 active: true
-position: 1
+position: 2
 ---
 Câu chuyện xoay quanh 3 người bạn thân là: Lâm, Phong, Bá. Ban đầu do Lâm thương gia đình Bá khó khăn nên Lâm cho thuê mặt bằng để mở quán cà phê. Nhưng sợ quán bình dân làm xấu mặt bằng của mình nên Lâm giới thiệu Phong thiết kế quán cà phê cho Bá. Ngày khai trương mới phát hiện ra Bá hiểu nhầm thù lao của Phong là 2.000 USD chứ không phải là 2 triệu VND. Do hoàn cảnh Bá phải về quê sinh sống và để lại quán này cho em ruột mình là Ba, hoàn cảnh éo le khiến Ba phải đồng sở hữu quán với Chà - một cô nàng độc thân vui tính và cũng từ đây hai người nên duyên vợ chồng.
 
