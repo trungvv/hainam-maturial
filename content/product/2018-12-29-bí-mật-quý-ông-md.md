@@ -1,0 +1,31 @@
+---
+templateKey: product
+title: Bí mật quý ông
+shortDesc: >-
+  Bí mật quý ông là bộ phim sitcom của Việt Nam năm 2018, của đạo diễn Văn Công
+  Viễn
+date: 2018-12-28T23:02:19.031Z
+cover: /assets/p2.jpg
+slug: bi-mat-quy-ong
+category: Phim
+tags:
+  - phim
+  - sitcom
+active: true
+position: 1
+---
+Câu chuyện xoay quanh 3 người bạn thân là: Lâm, Phong, Bá. Ban đầu do Lâm thương gia đình Bá khó khăn nên Lâm cho thuê mặt bằng để mở quán cà phê. Nhưng sợ quán bình dân làm xấu mặt bằng của mình nên Lâm giới thiệu Phong thiết kế quán cà phê cho Bá. Ngày khai trương mới phát hiện ra Bá hiểu nhầm thù lao của Phong là 2.000 USD chứ không phải là 2 triệu VND. Do hoàn cảnh Bá phải về quê sinh sống và để lại quán này cho em ruột mình là Ba, hoàn cảnh éo le khiến Ba phải đồng sở hữu quán với Chà - một cô nàng độc thân vui tính và cũng từ đây hai người nên duyên vợ chồng.
+
+![Hình ảnh trong phim](/assets/banner2.jpg "Bí mật quý ông")
+
+Phim cuốn hút bởi những tình tiết xoay quanh đời sống hàng ngày từ chuyện đôi vợ chồng lao động Hà - Bá do Nam Thư và Lê Dương Bảo Lâm đảm nhận. Cặp vợ chồng Chà - Ba hết mực yêu thương nhau nhưng cũng có lắm lúc cũng choảng nhau không kém, do Lâm Vỹ Dạ và Lê Dương Bảo Lâm đảm nhận.
+
+Chuyện một giáo viên thanh nhạc Dương Lâm, người mẫu mực hết lòng yêu con, đến mức con phải dọn ra ngoài để bớt được quan tâm do Khôi Trần đảm nhận vai Lâm – người cha và Lê Hạ Anh đảm nhận vai Ly – người con gái.
+
+Chuyện chàng trai giám đốc sáng tạo tên Phong đa tình và lãng tử, với nhiều mối tình chớp nhoáng gần như anh không nhớ hết tên các người yêu đã trải qua cho đến lúc anh gặp phải Ly - một cô gái đầy cá tính khiến anh phải ngã quỵ và xin cầu hôn. Vai Phong do Pom đảm nhận và vai Ly do Lê Hạ Anh đảm nhận.
+
+Chuyện ông bố trẻ của Ly (nhạc sĩ Dương Lâm) tìm cách xa lánh cô gái trẻ tên Quỳnh đáng tuổi con mình đem lòng yêu thương mình. Khiến cho Lâm liên tục phải chạy trốn và tìm cách xa lánh. Vai Quỳnh do Vũ Trần Kim Nhã – Next Top Model đảm nhận.
+
+Các tuyến truyện đan xen vào nhau tạo những tiếng cười rôm rả suốt 260 tập phim.
+
+“Bí mật quý ông” với 260 chủ đề từ đời sống thực tế, phong cách hiện đại và dí dỏm sẽ không chỉ là bộ phim lôi cuốn, mang tính giải trí cao, mà còn là cẩm nang giúp chị em phụ nữ và các con trong gia đình (đối tượng chính của truyền hình) hiểu hơn thế giới đàn ông và nắm bí quyết giữ gìn hạnh phúc gia đình.
