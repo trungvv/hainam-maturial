@@ -9,8 +9,8 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: "Post"
+  - name: hainamer
+    label: "HaiNamer"
     folder: "content/post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
@@ -23,6 +23,23 @@ collections:
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: product
+    label: "Product"
+    folder: "content/product"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Short Description", name: "shortDesc", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Cover Image", name: "cover", widget: "image"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Phim", "Chương trình tin tức", "Gameshows", "Chương trình xã hội", "Sản phẩm khác"]}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
+      - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
   - name: "pages"
     label: "Pages"
     files:

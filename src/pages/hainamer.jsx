@@ -8,16 +8,25 @@ import config from "../../data/SiteConfig";
 
 class Hainamer extends React.Component {
   render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    const data = this.props.data.allMarkdownRemark;
+    
+    const content = data ? 
+      <div>
+        <SEO postEdges={data.edges} />
+        <PostListing postEdges={data.edges} />
+      </div>
+    : <h1>Khong co du lieu</h1>
+  
+    
     return (
-      <Layout location={this.props.location} title="Home">
+      <Layout location={this.props.location} title="HaiNamer">
         <div className="index-container">
           <Helmet>
             <title>{config.siteTitle}</title>
             <link rel="canonical" href={`${config.siteUrl}`} />
           </Helmet>
-          <SEO postEdges={postEdges} />
-          <PostListing postEdges={postEdges} />
+          {content}
+
         </div>
       </Layout>
     );
@@ -27,8 +36,9 @@ class Hainamer extends React.Component {
 export default Hainamer;
 
 export const pageQuery = graphql`
-  query IndexQuery1 {
+  query IndexQuery {
     allMarkdownRemark(
+      filter: {frontmatter: {templateKey: {eq: "post"}}},
       limit: 2000
       sort: { fields: [fields___date], order: DESC }
     ) {

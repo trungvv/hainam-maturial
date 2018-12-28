@@ -63,12 +63,12 @@ export default class PostTemplate extends React.Component {
             <title>{`${post.title} | ${config.siteTitle}`}</title>
             <link rel="canonical" href={`${config.siteUrl}${post.id}`} />
           </Helmet>
-          {/* <SEO postPath={slug} postNode={postNode} postSEO /> */}
-          {/* <PostCover
+          <SEO postPath={slug} postNode={postNode} postSEO />
+          <PostCover
             postNode={postNode}
             coverHeight={coverHeight}
             coverClassName="md-grid md-cell--9 post-cover"
-          /> */}
+          />
           <div
             className={`md-grid md-cell--9 post-page-contents mobile-fix ${postOverlapClass}`}
           >
@@ -87,12 +87,12 @@ export default class PostTemplate extends React.Component {
                 />
               </div>
             </Card>
-            <UserInfo
+            {/* <UserInfo
               className="md-grid md-cell md-cell--12"
               config={config}
               expanded={expanded}
             />
-            {/* <Disqus postNode={postNode} expanded={expanded} /> */}
+            <Disqus postNode={postNode} expanded={expanded} /> */}
           </div>
 
           {/* <PostSuggestions postNode={postNode} /> */}

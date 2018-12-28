@@ -9,6 +9,7 @@ import Banner from "../components/Banner"
 
 class Index extends React.Component {
   render() {
+    console.log(this.props.data.allMarkdownRemark)
     const { frontmatter: bannerImage } = this.props.data.allMarkdownRemark.edges[0].node;
     return (
       <Layout location={this.props.location} title="Home">
@@ -56,29 +57,3 @@ query homePageData {
     }
   }
 }`;
-
-// export const pageQuery = graphql`
-//   query IndexQuery {
-//     allMarkdownRemark(
-//       limit: 2000
-//       sort: { fields: [fields___date], order: DESC }
-//     ) {
-//       edges {
-//         node {
-//           fields {
-//             slug
-//             date
-//           }
-//           excerpt
-//           timeToRead
-//           frontmatter {
-//             title
-//             tags
-//             cover
-//             date
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;

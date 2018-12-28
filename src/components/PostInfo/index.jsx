@@ -19,6 +19,7 @@ class PostInfo extends Component {
           // title={`Published on ${moment(postNode.fields.date).format(
           //   config.dateFormat
           // )}`}
+          title={post.title}
           subtitle={`${postNode.timeToRead} min read`}
         />
         <Link

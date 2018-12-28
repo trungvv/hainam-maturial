@@ -120,6 +120,12 @@ img {
   background: black;
   overflow: hidden;
 }
+.custom-card-img {
+  max-width: 100%;
+  background: black;
+  overflow: hidden;
+  max-height: 320px;
+}
 @media (min-width: 320px)
 {
   .custom-banner {
