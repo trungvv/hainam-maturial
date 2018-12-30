@@ -12,7 +12,7 @@ class Hainamer extends React.Component {
     
     const content = data ? 
       <div>
-        {/* <SEO postEdges={data.edges} />  */}
+        <SEO postEdges={data.edges} /> 
         <ProductList productEdges={data.edges}/>
         
       </div>

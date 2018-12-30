@@ -23,7 +23,7 @@ class ProductList extends React.Component {
             return (
                 <div>
                     {productList.map(product => (
-                        <div>
+                        <div className="row">
                             <ProductPreview key={product.title} productInfo={product}/>
                             
                         </div>
