@@ -6,7 +6,7 @@ import ProductList from "components/ProductList";
 import SEO from "../components/SEO";
 import config from "../../data/SiteConfig";
 
-class Hainamer extends React.Component {
+class Product extends React.Component {
   render() {
     const data = this.props.data.allMarkdownRemark;
     
@@ -34,7 +34,7 @@ class Hainamer extends React.Component {
   }
 }
 
-export default Hainamer;
+export default Product;
 
 export const productQuery = graphql`
   query productQuery {
