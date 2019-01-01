@@ -9,12 +9,13 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: "Post"
-    folder: "content"
+  - name: hainamer
+    label: "HaiNamer"
+    folder: "content/post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "post" }
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
@@ -22,3 +23,62 @@ collections:
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: product
+    label: "Product"
+    folder: "content/product"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Short Description", name: "shortDesc", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Cover Image", name: "cover", widget: "image"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Category", name: "category", widget: "select", options: ["Phim", "Chương trình tin tức", "Gameshows", "Chương trình xã hội", "Sản phẩm khác"]}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
+      - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/pages/home/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page" }
+          - {
+              label: "Banner Images",
+              name: "bannerImage",
+              widget: "list",
+              fields:
+                [
+                  { label: "ID", name: "id", widget: "number" },
+                  { label: "Image", name: "image", widget: "image" },
+                  { label: "Image Description", name: "imageAlt", widget: "string" },
+                  {
+                    label: "Link Type",
+                    name: "linkType",
+                    widget: "select",
+                    options: ["internal", "external"],
+                  },
+                  {
+                    label: "Link URL",
+                    name: "linkURL",
+                    widget: "string",
+                    hint: "Use a relative URL (e.g. /about) if the link is an internal link.",
+                  }
+                ],
+            }
+          - {
+              label: "SEO & Meta",
+              name: "seo",
+              widget: "object",
+              fields:
+                [
+                  { label: "Browser Tab Title", name: "browserTitle", widget: "string"},
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Description", name: "description", widget: "string" },
+                ],
+            }
