@@ -15,19 +15,31 @@ function GetNavList(config) {
     }
   ];
 
-  if (config.userLinks) {
-    config.userLinks.forEach(link => {
-      NavList.push({
-        primaryText: link.label,
-        leftIcon: <FontIcon forceSize iconClassName={link.iconClassName} />,
-        component: "a",
-        href: link.url
-      });
-    });
-  }
+  // if (config.userLinks) {
+  //   config.userLinks.forEach(link => {
+  //     NavList.push({
+  //       primaryText: link.label,
+  //       leftIcon: <FontIcon forceSize iconClassName={link.iconClassName} />,
+  //       component: "a",
+  //       href: link.url
+  //     });
+  //   });
+  // }
 
+  
+  NavList.push({
+    primaryText: "Sản phẩm",
+    leftIcon: <FontIcon>person</FontIcon>,
+    component: Link,
+    to: "/product/"
+  });
+  NavList.push({
+    primaryText: "Hải Namer",
+    leftIcon: <FontIcon>person</FontIcon>,
+    component: Link,
+    to: "/hainamer/"
+  });
   NavList.push({ divider: true });
-
   NavList.push({
     primaryText: "About",
     leftIcon: <FontIcon>person</FontIcon>,

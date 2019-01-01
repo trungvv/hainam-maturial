@@ -53,11 +53,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === "MarkdownRemark") {
     const fileNode = getNode(node.parent);
     const parsedFilePath = path.parse(fileNode.relativePath);
+    
     if (
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+      if(node.frontmatter.templateKey==="post") {
+        slug = `hainamer/${_.kebabCase(node.frontmatter.title)}`;
+      }
+      else if (node.frontmatter.templateKey==="product") {
+        slug = `product/${_.kebabCase(node.frontmatter.title)}`;
+      }
+      else slug = `/${_.kebabCase(node.frontmatter.title)}`;
     } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
     } else if (parsedFilePath.dir === "") {
@@ -67,8 +74,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+      // if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
+      //   slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+      
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
         const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
         if (!date.isValid)
@@ -81,6 +89,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         });
       }
     }
+    // console.log('---->:');
+    // console.log(parsedFilePath);
+    // console.log(slug);
     createNodeField({ node, name: "slug", value: slug });
     postNodes.push(node);
   }
@@ -108,7 +119,9 @@ exports.createPages = ({ graphql, actions }) => {
             allMarkdownRemark {
               edges {
                 node {
+                  id
                   frontmatter {
+                    templateKey
                     tags
                     category
                   }
@@ -129,6 +142,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         const tagSet = new Set();
         const categorySet = new Set();
+        
         result.data.allMarkdownRemark.edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
@@ -139,11 +153,23 @@ exports.createPages = ({ graphql, actions }) => {
           if (edge.node.frontmatter.category) {
             categorySet.add(edge.node.frontmatter.category);
           }
-
+          console.log("----slug:");
+          console.log(edge.node.fields.slug);
+          let component, pathName;
+          if (edge.node.frontmatter.templateKey === "home-page") {
+            pathName = "/";
+            component = path.resolve(`src/pages/index.jsx`);
+          } 
+          else {
+            pathName = edge.node.frontmatter.path || edge.node.fields.slug;
+            component = path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.jsx`);
+          }
+          const id = edge.node.id;
           createPage({
             path: edge.node.fields.slug,
             component: postPage,
             context: {
+              id,
               slug: edge.node.fields.slug
             }
           });

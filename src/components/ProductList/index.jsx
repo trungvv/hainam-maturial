@@ -21,12 +21,11 @@ class ProductList extends React.Component {
         const productList = this.props.productEdges? this.getProductList() : null;
         if (productList) {
             return (
-                <div>
+                <div className="row">
                     {productList.map(product => (
-                        <div className="row">
+                        
                             <ProductPreview key={product.title} productInfo={product}/>
                             
-                        </div>
                     ))}
                 </div>
             );

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 class ProductPreview extends React.Component {
     render() {
         const {productInfo} = this.props;
-        console.log(productInfo);
+        
         return (
             <div className="col col-sm-6 col-md-4 col-lg-3">
                 <div className="card" key={productInfo.title}>

@@ -15,3 +15,9 @@
   .slick-next {
     right: 15px;
   }
+.slick-dots {
+  bottom: 18px;
+}
+.slick-dots li button:before{
+    font-size: 16px;
+  }
