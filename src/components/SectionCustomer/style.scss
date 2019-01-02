@@ -1,0 +1,13 @@
+@import 'scss/colors.scss';
+
+.overflow-hidden {
+    height: 7rem;
+    padding-top: 1rem;
+    overflow: hidden;
+}
+.line {
+    left: 50%;
+    right: 50%;
+    width: 100px;
+    height: 1px;
+}

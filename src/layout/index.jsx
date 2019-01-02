@@ -1,24 +1,24 @@
 import React from "react";
 import Helmet from "react-helmet";
 import "font-awesome/scss/font-awesome.scss";
-import Navigation from "../components/Navigation";
+import Nav from 'components/Navi';
+import Footer from 'components/Footer';
 import config from "../../data/SiteConfig";
-import "./index.scss";
-import "./global.scss";
-import '../scss/gatstrap.scss'
+import 'scss/gatstrap.scss'
 
 export default class MainLayout extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <Navigation config={config} LocalTitle={this.props.title}>
+     
         <div>
+          <Nav title={config.siteDescription.title} {...this.props} />
           <Helmet>
             <meta name="description" content={config.siteDescription} />
           </Helmet>
           {children}
+          <Footer />
         </div>
-      </Navigation>
     );
   }
 }

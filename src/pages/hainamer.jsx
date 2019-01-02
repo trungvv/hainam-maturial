@@ -23,7 +23,8 @@ class Hainamer extends React.Component {
         <div className="index-container">
           <Helmet>
             <title>{config.siteTitle}</title>
-            <link rel="canonical" href={`${config.siteUrl}`} />
+            <link rel="canonical" href={`${config.siteUrl}/hainamer/`} />
+            <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
           {content}
 

@@ -24,7 +24,8 @@ class Product extends React.Component {
         <div className="index-container">
           <Helmet>
             <title>{'Sản phẩm'|config.siteTitle}</title>
-            <link rel="canonical" href={`${config.siteUrl}`} />
+            <link rel="canonical" href={`${config.siteUrl}/product/`} />
+            <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
           {content}
 

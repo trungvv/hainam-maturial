@@ -12,6 +12,7 @@ class AboutPage extends Component {
           <Helmet>
             <title>{`About | ${config.siteTitle}`}</title>
             <link rel="canonical" href={`${config.siteUrl}/about/`} />
+            <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
           <About />
         </div>
