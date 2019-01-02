@@ -37,11 +37,21 @@ customers:
     imageAlt: Nam Dược
     linkType: external
     linkURL: 'http://namduoc.vn/'
-  - id: '2'
+  - id: '4'
     image: /assets/customers-pnj-logo.png
     imageAlt: PNJ
     linkType: external
     linkURL: 'https://www.pnj.com.vn/'
+  - id: '5'
+    image: /assets/customers-rmit-logo.png
+    imageAlt: RMIT
+    linkType: external
+    linkURL: 'https://www.rmit.edu.vn/'
+  - id: '6'
+    image: /assets/customers-sabeco.png
+    imageAlt: Sabeco
+    linkType: external
+    linkURL: 'http://www.sabeco.com.vn/'
 pricingTitle: Liên hệ
 pricingBtn: Xem chi tiết báo giá
 contactSSubtitle: 'Chất lượng, Nhanh chóng, Tin cậy, liên hệ ngay để được phục vụ.'
