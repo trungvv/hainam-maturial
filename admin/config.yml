@@ -19,7 +19,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
-      - {label: "Slug", name: "slug", widget: "string"}
+      
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -34,7 +34,7 @@ collections:
       - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
-      - {label: "Slug", name: "slug", widget: "string"}
+     
       - {label: "Category", name: "category", widget: "select", options: ["Phim", "Chương trình tin tức", "Gameshows", "Chương trình xã hội", "Sản phẩm khác"]}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -69,6 +69,53 @@ collections:
                     widget: "string",
                     hint: "Use a relative URL (e.g. /about) if the link is an internal link.",
                   }
+                ],
+            }
+          - { label: "Product Title", name: "productTitle", widget: "string", hint: "Tiêu đề của vùng Sản phẩm tiêu biểu" }
+          - { label: "Product SubTitle", name: "productSubtitle", widget: "string", hint: "Tiêu đề con của vùng Sản phẩm tiêu biểu" }
+          - { label: "Service Title", name: "serviceTitle", widget: "string", hint: "Tiêu đề của vùng Dịch vụ" }
+          - { label: "Service SubTitle", name: "serviceSubtitle", widget: "string", hint: "Tiêu đề con của vùng Dịch vụ" }
+          - { label: "Customer Title", name: "customerTitle", widget: "string", hint: "Tiêu đề của vùng Khách hàng" }
+          - { 
+              label: "Customers", 
+              name: "customers", 
+              widget: "list", 
+              hint: "Các khách hàng tiêu biểu",
+              fields: 
+                [
+                  { label: "ID", name: "id", widget: "number" },
+                  { label: "Image", name: "image", widget: "image" },
+                  { label: "Image Description", name: "imageAlt", widget: "string" },
+                  {
+                    label: "Link Type",
+                    name: "linkType",
+                    widget: "select",
+                    options: ["internal", "external"],
+                  },
+                  {
+                    label: "Link URL",
+                    name: "linkURL",
+                    widget: "string",
+                    hint: "Use a relative URL (e.g. /about) if the link is an internal link.",
+                  }
+                ],
+            }
+          - { label: "Pricing Title", name: "pricingTitle", widget: "string", hint: "Tiêu đề của vùng Báo giá" }
+          - { label: "Pricing Button", name: "pricingBtn", widget: "string", hint: "Nội dung button báo giá" }
+          - { label: "Contact Title", name: "pricingTitle", widget: "string", hint: "Tiêu đề của vùng Liên Hệ" }
+          - { label: "Contact SubTitle", name: "contactSSubtitle", widget: "string", hint: "Tiêu đề con của vùng Liên Hệ" }
+          - { 
+              label: "Office", 
+              name: "offices", 
+              widget: "list", 
+              hint: "Các văn phòng",
+              fields: 
+                [
+                  { label: "ID", name: "id", widget: "number" },
+                  { label: "Office", name: "office", widget: "string"  },
+                  { label: "Phone", name: "phone", widget: "string" },
+                  { label: "Fax", name: "fax", widget: "string" },
+                  { label: "Hotline", name: "hotline", widget: "string" }
                 ],
             }
           - {
