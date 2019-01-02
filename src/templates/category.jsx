@@ -23,6 +23,7 @@ export default class CategoryTemplate extends React.Component {
               rel="canonical"
               href={`${config.siteUrl}/categories/${category}`}
             />
+            <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
           <PostListing postEdges={postEdges} />
         </div>

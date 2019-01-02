@@ -11,6 +11,7 @@ class ProductList extends React.Component {
                 title: product.node.frontmatter.title,
                 category: product.node.frontmatter.category,
                 shortDesc: product.node.frontmatter.shortDesc,
+                excerpt: product.node.frontmatter.excerpt,
                 date: product.node.fields.date,
                 slug: product.node.fields.slug,
             });
@@ -21,12 +22,14 @@ class ProductList extends React.Component {
         const productList = this.props.productEdges? this.getProductList() : null;
         if (productList) {
             return (
-                <div className="row">
-                    {productList.map(product => (
-                        
-                            <ProductPreview key={product.title} productInfo={product}/>
-                            
-                    ))}
+                <div className="container">
+                    <div className="row">
+                        {productList.map(product => (
+
+                            <ProductPreview key={product.title} productInfo={product} />
+
+                        ))}
+                    </div>
                 </div>
             );
         } 

@@ -19,6 +19,7 @@ export default class TagTemplate extends React.Component {
           <Helmet>
             <title>{`Posts tagged as "${tag}" | ${config.siteTitle}`}</title>
             <link rel="canonical" href={`${config.siteUrl}/tags/${tag}`} />
+            <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
           <PostListing postEdges={postEdges} />
         </div>

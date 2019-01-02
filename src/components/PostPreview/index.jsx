@@ -44,33 +44,56 @@ class PostPreview extends Component {
     /* eslint no-undef: "off" */
     const coverHeight = mobile ? 162 : 225;
     return (
-      <Card key={postInfo.path} raise className="md-grid md-cell md-cell--12">
-        <Link style={{ textDecoration: "none" }} to={postInfo.path}>
-          <Media style={{ height: coverHeight, paddingBottom: "0px" }}>
-            <PostCover postNode={postInfo} coverHeight={coverHeight} />
-            <MediaOverlay>
-              <CardTitle title={postInfo.title}>
-                <Button raised secondary className="md-cell--right">
-                  Read
-                </Button>
-              </CardTitle>
-            </MediaOverlay>
-          </Media>
-        </Link>
-        <CardTitle
-          expander={expand}
-          avatar={<Avatar icon={<FontIcon iconClassName="fa fa-calendar" />} />}
-          title={`Published on ${moment(postInfo.date).format(
-            config.dateFormat
-          )}`}
-          subtitle={`${postInfo.timeToRead} min read`}
-        />
+      <div className="col-lg-4 col-md-6 mt-4 mb-4">
+                <div className="card" key={postInfo.title}>
+                    <Link to={postInfo.path}>
+                        {/* <div className="custom-card-img">
+                            <img className="card-img-top" src={productInfo.cover} alt="Card image cap" />
+                        </div> */}
+                        <PostCover postNode={postInfo} coverHeight={coverHeight} />
+                    </Link>
+                    <div className="card-body">
+                        <Link to={postInfo.path}>
+                            <h5 className="media-title">{postInfo.title}</h5>
+                        </Link>
+                        <p className="card-subtitle">
+                            <small className="text-muted">{postInfo.date}</small>
+                        </p>
+                        <div className="overflow-hidden">
+                            <p className="card-text text-justify">{postInfo.excerpt}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+      // <Card key={postInfo.path} raise className="md-grid md-cell md-cell--12">
+      //   <Link style={{ textDecoration: "none" }} to={postInfo.path}>
+      //     <Media style={{ height: coverHeight, paddingBottom: "0px" }}>
+      //       <PostCover postNode={postInfo} coverHeight={coverHeight} />
+      //       <MediaOverlay>
+      //         <CardTitle title={postInfo.title}>
+      //           <Button raised secondary className="md-cell--right">
+      //             Read
+      //           </Button>
+      //         </CardTitle>
+      //       </MediaOverlay>
+      //     </Media>
+      //   </Link>
+      //   <CardTitle
+      //     expander={expand}
+      //     avatar={<Avatar icon={<FontIcon iconClassName="fa fa-calendar" />} />}
+      //     title={`Published on ${moment(postInfo.date).format(
+      //       config.dateFormat
+      //     )}`}
+      //     subtitle={`${postInfo.timeToRead} min read`}
+      //   />
 
-        <CardText expandable={expand}>
-          {postInfo.excerpt}
-          <PostTags tags={postInfo.tags} />
-        </CardText>
-      </Card>
+      //   <CardText expandable={expand}>
+      //     {postInfo.excerpt}
+      //     <PostTags tags={postInfo.tags} />
+      //   </CardText>
+      // </Card>
     );
   }
 }

@@ -167,7 +167,7 @@ exports.createPages = ({ graphql, actions }) => {
           const id = edge.node.id;
           createPage({
             path: edge.node.fields.slug,
-            component: postPage,
+            component: component,
             context: {
               id,
               slug: edge.node.fields.slug
