@@ -3,17 +3,17 @@ templateKey: home-page
 bannerImage:
   - id: 1
     image: /assets/banner2.jpg
-    imageAlt: JavaScript Wakanda
+    imageAlt: Bí mật quý ông
     linkType: internal
     linkURL: /
   - id: 2
     image: /assets/banner1.jpg
-    imageAlt: JavaScript Wakanda
+    imageAlt: Bí mật quý ông
     linkType: internal
     linkURL: /
   - id: 3
     image: /assets/3.jpg
-    imageAlt: JavaScript Wakanda
+    imageAlt: OOH
     linkType: internal
     linkURL: /
 productTitle: Sản phẩm
