@@ -99,7 +99,7 @@ collections:
                     hint: "Use a relative URL (e.g. /about) if the link is an internal link.",
                   }
                 ],
-           }
+            }
           - { label: "Pricing Title", name: "pricingTitle", widget: "string", hint: "Tiêu đề của vùng Báo giá" }
           - { label: "Pricing Button", name: "pricingBtn", widget: "string", hint: "Nội dung button báo giá" }
           - { label: "Contact Title", name: "pricingTitle", widget: "string", hint: "Tiêu đề của vùng Liên Hệ" }
@@ -117,7 +117,7 @@ collections:
                   { label: "Fax", name: "fax", widget: "string" },
                   { label: "Hotline", name: "hotline", widget: "string" }
                 ],
-           }
+            }
           - {
               label: "SEO & Meta",
               name: "seo",
