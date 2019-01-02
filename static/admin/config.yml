@@ -113,6 +113,7 @@ collections:
                 [
                   { label: "ID", name: "id", widget: "number" },
                   { label: "Office", name: "office", widget: "string"  },
+                  { label: "Address", name: "address", widget: "string"  },
                   { label: "Phone", name: "phone", widget: "string" },
                   { label: "Fax", name: "fax", widget: "string" },
                   { label: "Hotline", name: "hotline", widget: "string" }
