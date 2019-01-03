@@ -10,8 +10,8 @@ class ProductList extends React.Component {
                 cover: product.node.frontmatter.cover,
                 title: product.node.frontmatter.title,
                 category: product.node.frontmatter.category,
-                shortDesc: product.node.frontmatter.shortDesc,
-                excerpt: product.node.frontmatter.excerpt,
+                // shortDesc: product.node.frontmatter.shortDesc,
+                excerpt: product.node.excerpt,
                 date: product.node.fields.date,
                 slug: product.node.fields.slug,
             });

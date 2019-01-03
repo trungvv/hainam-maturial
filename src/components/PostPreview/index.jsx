@@ -1,13 +1,7 @@
 import React, { Component } from "react";
-import Card from "react-md/lib/Cards/Card";
-import CardTitle from "react-md/lib/Cards/CardTitle";
-import Button from "react-md/lib/Buttons";
-import Avatar from "react-md/lib/Avatars";
-import CardText from "react-md/lib/Cards/CardText";
-import FontIcon from "react-md/lib/FontIcons";
+
 import { Link } from "gatsby";
 import moment from "moment";
-import Media, { MediaOverlay } from "react-md/lib/Media";
 import PostTags from "../PostTags";
 import PostCover from "../PostCover";
 import config from "../../../data/SiteConfig";
@@ -57,7 +51,9 @@ class PostPreview extends Component {
                             <h5 className="media-title">{postInfo.title}</h5>
                         </Link>
                         <p className="card-subtitle">
-                            <small className="text-muted">{postInfo.date}</small>
+                            <small className="text-muted">
+                              {moment(postInfo.date).format( config.dateFormat)}
+                            </small>
                         </p>
                         <div className="overflow-hidden">
                             <p className="card-text text-justify">{postInfo.excerpt}</p>

@@ -34,9 +34,6 @@ class ProductPreview extends React.Component {
             <div className="col-lg-4 col-md-6 mt-4 mb-4">
                 <div className="card" key={productInfo.title}>
                     <Link to={productInfo.path}>
-                        {/* <div className="custom-card-img">
-                            <img className="card-img-top" src={productInfo.cover} alt="Card image cap" />
-                        </div> */}
                         <PostCover postNode={productInfo} coverHeight={coverHeight} />
                     </Link>
                     <div className="card-body">
@@ -47,7 +44,7 @@ class ProductPreview extends React.Component {
                             <small className="text-muted">{productInfo.category}</small>
                         </p>
                         <div className="overflow-hidden">
-                            <p className="card-text text-justify">{productInfo.shortDesc}</p>
+                            <p className="card-text text-justify">{productInfo.excerpt}</p>
                         </div>
                     </div>
                     
