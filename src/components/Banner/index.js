@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import './style.scss'
-
+import PostCover from 'components/PostCover';
 // const items = [
 //   {
 //     id: 1,
@@ -42,9 +42,11 @@ class Banner extends Component {
     const items = this.props.bannerImage.bannerImage;
     // console.log(items);
     const slides = items.map(item => {
+      const postNode = {cover: item.image}; 
       return (
           <div className="custom-banner" key={item.id}>
-            <img className="card-img-top" src={item.image} alt={item.imageAlt} />
+            {/* <img className="card-img-top" src={item.image} alt={item.imageAlt} /> */}
+            <PostCover postNode={postNode}/>
           </div>
 
       )

@@ -73,7 +73,7 @@ module.exports = {
     //   }
     // },
     
-    //"gatsby-plugin-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -137,7 +137,7 @@ module.exports = {
         ]
       }
     },
-    // "gatsby-plugin-offline",
+    "gatsby-plugin-offline",
     // {
     //   resolve: "gatsby-plugin-feed",
     //   options: {
