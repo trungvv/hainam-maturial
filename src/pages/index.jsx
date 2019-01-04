@@ -22,7 +22,7 @@ class Index extends React.Component {
             <link rel="canonical" href={`${config.siteUrl}`} />
             <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
-          {/* <SEO postEdges={postEdges} /> */}
+          <SEO />
 
           <Banner bannerImage={bannerImage}/>
           <SectionProduct />

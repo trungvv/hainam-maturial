@@ -189,19 +189,19 @@ exports.createPages = ({ graphql, actions }) => {
         // console.log ("-----> category:");
         // console.log (categoryList);
         categoryList.forEach(item => {
-          let path = "";
-          if (item.templateKey == "post") {
-            path = `/hainamer/${_.kebabCase(item.category)}/`;
-          }
-          else if (item.templateKey == "product") {
-            path = `/product/${_.kebabCase(item.category)}/`;
-          }
-          else if (item.templateKey == "pricing") {
-            path = `/pricing/${_.kebabCase(item.category)}/`;
-          }
-          else {
-            path = `/categories/${_.kebabCase(item.category)}/`;
-          }
+          let path = `/${item.templateKey}/${_.kebabCase(item.category)}/`;
+          // if (item.templateKey == "post") {
+          //   path = `/hainamer/${_.kebabCase(item.category)}/`;
+          // }
+          // else if (item.templateKey == "product") {
+          //   path = `/product/${_.kebabCase(item.category)}/`;
+          // }
+          // else if (item.templateKey == "pricing") {
+          //   path = `/pricing/${_.kebabCase(item.category)}/`;
+          // }
+          // else {
+          //   path = `/categories/${_.kebabCase(item.category)}/`;
+          // }
           console.log ("-----> path:");
           console.log (path);
           createPage({
