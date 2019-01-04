@@ -132,7 +132,7 @@ class SectionService extends Component {
     })
 
     return (
-      <div className="jumbotron container-fluid rounded-0 mb-0">
+      <div className="jumbotron container-fluid rounded-0 mb-0" id="service">
         <h1 className="display-4 text-center">
           {/* {t('service-title')} */}
           Dịch vụ

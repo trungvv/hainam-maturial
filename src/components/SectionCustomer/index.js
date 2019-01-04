@@ -114,7 +114,7 @@ class SectionCustomer extends Component {
     })
 
     return (
-      <div className="jumbotron bg-light mb-0">
+      <div className="jumbotron bg-light mb-0" id="customer">
         <h1 className="display-4 text-center">
           {/* {t('customer-title')} */}
           Khách hàng

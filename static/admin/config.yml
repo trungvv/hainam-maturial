@@ -110,7 +110,6 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Location", name: "location", widget: "string", hint: "Địa điểm/Thành phố"}
       - {label: "Cover Image", name: "cover", widget: "image"}
-      
       - {label: "Category", name: "category", widget: "string"}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -125,10 +124,41 @@ collections:
       - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
-     
       - {label: "Category", name: "category", widget: "select", options: ["Phim", "Chương trình tin tức", "Gameshows", "Chương trình xã hội", "Sản phẩm khác"]}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Active", name: "active", widget: "boolean", default: true}
       - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
+  - name: "service"
+    label: "Service"
+    folder: "content/service"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "service" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Short Description", name: "shortDesc", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Cover Image", name: "cover", widget: "image"}
+      # - {label: "Category", name: "category", widget: "select", options: ["Phim", "Chương trình tin tức", "Gameshows", "Chương trình xã hội", "Sản phẩm khác"]}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
+      - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
+  - name: "pricing"
+    label: "Pricing"
+    folder: "content/pricing"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pricing" }
+      - {label: "Title", name: "title", widget: "string"}
+      # - {label: "Short Description", name: "shortDesc", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Cover Image", name: "cover", widget: "image"}
+      - {label: "Category", name: "category", widget: "select", options: ["Báo điện tử", "Báo giấy", "Truyền hình", "OOH"]}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
+      # - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
   

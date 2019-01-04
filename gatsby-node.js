@@ -64,6 +64,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       else if (node.frontmatter.templateKey==="product") {
         slug = `product/${_.kebabCase(node.frontmatter.title)}`;
       }
+      else if (node.frontmatter.templateKey==="service") {
+        slug = `service/${_.kebabCase(node.frontmatter.title)}`;
+      }
+      else if (node.frontmatter.templateKey==="pricing") {
+        slug = `pricing/${_.kebabCase(node.frontmatter.title)}`;
+      }
+      // if(node.frontmatter.templateKey) {
+      //   slug = node.frontmatter.templateKey + `/${_.kebabCase(node.frontmatter.title)}`;
+      // }
       else slug = `/${_.kebabCase(node.frontmatter.title)}`;
     } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
@@ -109,7 +118,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const postPage = path.resolve("src/templates/post.jsx");
+
     const tagPage = path.resolve("src/templates/tag.jsx");
     const categoryPage = path.resolve("src/templates/category.jsx");
     resolve(

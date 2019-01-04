@@ -35,7 +35,7 @@ const Footer = ({ author, title }) => (
               <Link to="/product/">Sản phẩm</Link>
             </li>
             <li>
-              <Link to="/service/">Dịch vụ</Link>
+              <Link to="#service">Dịch vụ</Link>
             </li>
             <li>
               <Link to="/pricing/">Bảng giá</Link>

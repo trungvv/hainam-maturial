@@ -107,62 +107,27 @@ class Navi extends React.Component {
             </UncontrolledDropdown>
 
             {/* Dịch vụ */}
-            <UncontrolledDropdown
-              nav
-              inNavbar
+            <NavItem
               className={
-                location.pathname === '/service/'
-                  ? 'nav-item active'
-                  : 'nav-item'
+                location.pathname === '#service' ? 'nav-item active' : 'nav-item'
               }
             >
-              <DropdownToggle nav caret>
-                {/* {t('menu-item-service')} */}
+              <Link to="#service" className="nav-link">
+                {/* {t('menu-item-home')} */}
                 Dịch vụ
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  <Link to="/service/media/" className="nav-link">
-                    {/* {t('menu-subitem-media')} */}
-                    Media
-                  </Link>
-                </DropdownItem>
-                <DropdownItem>
-                  <Link to="/service/pr/" className="nav-link">
-                    {/* {t('menu-subitem-pr')} */}
-                    Public Relations
-                  </Link>
-                </DropdownItem>
-                <DropdownItem>
-                  <Link to="/service/event/" className="nav-link">
-                    {/* {t('menu-subitem-event')} */}
-                    Tổ chức Event
-                  </Link>
-                </DropdownItem>
-                <DropdownItem>
-                  <Link to="/service/digitalmarketing/" className="nav-link">
-                    {/* {t('menu-subitem-digitalMarketing')} */}
-                    Digital Marketing
-                  </Link>
-                </DropdownItem>
-                <DropdownItem>
-                  <Link to="/service/ooh/" className="nav-link">
-                    {/* {t('menu-subitem-ooh')} */}
-                    OOH
-                  </Link>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+              </Link>
+            </NavItem>
+            
 
             {/* Khách hàng */}
             <NavItem
               className={
-                location.pathname === '/customers'
+                location.pathname === '#customers'
                   ? 'nav-item active'
                   : 'nav-item'
               }
             >
-              <Link to="/" className="nav-link">
+              <Link to="#customers" className="nav-link">
                 {/* {t('menu-item-customer')} */}
                 Khách hàng
               </Link>
