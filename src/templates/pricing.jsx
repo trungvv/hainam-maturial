@@ -56,7 +56,6 @@ export default class PricingTemplate extends React.Component {
     const coverHeight = mobile ? 180 : 350;
     return (
       <Layout location={this.props.location}>
-        {/* <div className="post-page md-grid md-grid--no-spacing"> */}
           <Helmet>
             <title>{`${post.title} | ${config.siteTitle}`}</title>
             <link rel="canonical" href={`${config.siteUrl}${post.id}`} />
@@ -72,49 +71,37 @@ export default class PricingTemplate extends React.Component {
               </div>
             </div>
           </header>
-          {/* <PostCover
-            postNode={postNode}
-            coverHeight={coverHeight}
-            coverClassName="md-grid md-cell--9 post-cover"
-          /> */}
-        
-        <div className="row container">
+   
+        <div className="row container mt-4 mb-4">
           {/* Post Content Column */}
           <div className="col-lg-8">
 
-            <Card className="md-grid md-cell md-cell--12 post">
-              <CardText className="post-body">
-                <h1 className="md-display-2 post-header">{post.title}</h1>
-                <PostInfo postNode={postNode} />
-                <PostCover
-                  postNode={postNode}
-                  coverHeight={coverHeight}
-                />
-                <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-              </CardText>
-              <div className="post-meta clearfix">
-                <PostTags tags={post.tags} className="float-left"/>
-                <SocialLinks
-                    postPath={slug}
-                    postNode={postNode}
-                    mobile={this.state.mobile}
-                    className="float-right"
-                  />
-              </div>
-            </Card>
-            {/* <UserInfo
-              className="md-grid md-cell md-cell--12"
-              config={config}
-              expanded={expanded}
+            <h1 className="">{post.title}</h1>
+            <PostInfo postNode={postNode} />
+            <PostCover
+              postNode={postNode}
+              coverHeight={coverHeight}
             />
-            <Disqus postNode={postNode} expanded={expanded} /> */}
+
+            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <hr />
+            <div className="row">
+              <PostTags tags={post.tags} className="col" />
+              <SocialLinks
+                postPath={slug}
+                postNode={postNode}
+                mobile={this.state.mobile}
+                className="col"
+              />
+            </div>
+
           </div>
           {/* Related Post Column */}
           <div className="col-lg-4">
             <p>Related Post Column</p>
           </div>
           {/* <PostSuggestions postNode={postNode} /> */}
-          {/* </div> */}
+
         </div>
 
       </Layout>

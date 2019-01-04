@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { Link } from "gatsby";
 import moment from "moment";
-import PostTags from "../PostTags";
 import PostCover from "../PostCover";
 import config from "../../../data/SiteConfig";
 import "./PostPreview.scss";
@@ -41,9 +40,6 @@ class PostPreview extends Component {
       <div className="col-lg-4 col-md-6 mt-4 mb-4">
                 <div className="card" key={postInfo.title}>
                     <Link to={postInfo.path}>
-                        {/* <div className="custom-card-img">
-                            <img className="card-img-top" src={productInfo.cover} alt="Card image cap" />
-                        </div> */}
                         <PostCover postNode={postInfo} coverHeight={coverHeight} />
                     </Link>
                     <div className="card-body">

@@ -13,29 +13,23 @@ class PostInfo extends Component {
     const { postNode } = this.props;
     const post = postNode.frontmatter;
     return (
-      <div className="post-info">
-        <CardTitle
-          avatar={<Avatar icon={<FontIcon iconClassName="fa fa-calendar" />} />}
-          // title={`Published on ${moment(postNode.fields.date).format(
-          //   config.dateFormat
-          // )}`}
-          title={post.title}
-          subtitle={`${postNode.timeToRead} min read`}
-        />
+      <div className="row">
+        <div className="col">
+        {`${moment(postNode.frontmatter.date).format(
+            config.dateFormat
+          )}`}
+        </div>
+        <div className="col">
         <Link
           className="category-link"
           // to={`/hainamer/${_.kebabCase(post.category)}`}
           to={`/${post.templateKey}/${_.kebabCase(post.category)}`}
         >
-          <CardTitle
-            avatar={
-              <Avatar icon={<FontIcon iconClassName="fa fa-folder-open" />} />
-            }
-            title="In category"
-            subtitle={post.category}
-          />
+          {post.category}
         </Link>
+        </div>
       </div>
+     
     );
   }
 }

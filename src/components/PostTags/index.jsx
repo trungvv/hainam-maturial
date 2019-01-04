@@ -7,15 +7,15 @@ class PostTags extends Component {
   render() {
     const { tags } = this.props;
     return (
-      <div className="post-tag-container">
-        Tags: {tags &&
+      <div className="col social-links">
+        <mini>Tags: </mini> {tags &&
           tags.map(tag => (
             <Link
               key={tag}
               style={{ textDecoration: "none" }}
               to={`/tags/${_.kebabCase(tag)}`}
             >
-            <span className="badge badge-pill badge-light">{tag}</span>
+            <span className="badge badge-pill badge-light border">{tag}</span>
               {/* <Chip label={tag} className="post-preview-tags" /> */}
             </Link>
           ))}
