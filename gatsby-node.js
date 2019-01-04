@@ -58,21 +58,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
-      if(node.frontmatter.templateKey==="post") {
-        slug = `hainamer/${_.kebabCase(node.frontmatter.title)}`;
-      }
-      else if (node.frontmatter.templateKey==="product") {
-        slug = `product/${_.kebabCase(node.frontmatter.title)}`;
-      }
-      else if (node.frontmatter.templateKey==="service") {
-        slug = `service/${_.kebabCase(node.frontmatter.title)}`;
-      }
-      else if (node.frontmatter.templateKey==="pricing") {
-        slug = `pricing/${_.kebabCase(node.frontmatter.title)}`;
-      }
-      // if(node.frontmatter.templateKey) {
-      //   slug = node.frontmatter.templateKey + `/${_.kebabCase(node.frontmatter.title)}`;
+      // if(node.frontmatter.templateKey==="post") {
+      //   slug = `hainamer/${_.kebabCase(node.frontmatter.title)}`;
       // }
+      // else if (node.frontmatter.templateKey==="product") {
+      //   slug = `product/${_.kebabCase(node.frontmatter.title)}`;
+      // }
+      // else if (node.frontmatter.templateKey==="service") {
+      //   slug = `service/${_.kebabCase(node.frontmatter.title)}`;
+      // }
+      // else if (node.frontmatter.templateKey==="pricing") {
+      //   slug = `pricing/${_.kebabCase(node.frontmatter.title)}`;
+      // }
+      if(node.frontmatter.templateKey) {
+        slug = node.frontmatter.templateKey + `/${_.kebabCase(node.frontmatter.title)}`;
+      }
       else slug = `/${_.kebabCase(node.frontmatter.title)}`;
     } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
       slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;

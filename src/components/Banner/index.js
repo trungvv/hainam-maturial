@@ -9,7 +9,34 @@ import PostCover from 'components/PostCover';
 
 
 class Banner extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mobile: 225
+    };
+    this.handleResize = this.handleResize.bind(this);
+  }
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
+  }
+
+  handleResize() {
+    this.setState({ mobile: window.innerWidth/2.7 });
+    // if (window.innerWidth >= 640) {
+    //   this.setState({ mobile: false });
+    // } else {
+    //   this.setState({ mobile: true });
+    // }
+  }
   render() {
+    // Process screen size
+    const { mobile } = this.state;
+
     const settings = {
       dots: true,
       infinite: true,
@@ -24,7 +51,7 @@ class Banner extends Component {
       return (
           <div className="custom-banner" key={item.id}>
             {/* <img className="card-img-top" src={item.image} alt={item.imageAlt} /> */}
-            <PostCover postNode={postNode} coverHeight="auto"/>
+            <PostCover postNode={postNode} coverHeight={mobile}/>
           </div>
 
       )
