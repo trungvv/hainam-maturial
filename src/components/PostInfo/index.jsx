@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import CardTitle from "react-md/lib/Cards/CardTitle";
-import Avatar from "react-md/lib/Avatars";
-import FontIcon from "react-md/lib/FontIcons";
 import { Link } from "gatsby";
 import moment from "moment";
 import _ from "lodash";
