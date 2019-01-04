@@ -1,5 +1,5 @@
 ---
-templateKey: post
+templateKey: hainamer
 title: Hello World
 date: 2018-12-19T23:29:38.789Z
 cover: /assets/banner1.jpg

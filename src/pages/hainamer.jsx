@@ -39,7 +39,7 @@ export default Hainamer;
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
-      filter: {frontmatter: {templateKey: {eq: "post"}}},
+      filter: {frontmatter: {templateKey: {eq: "hainamer"}}},
       limit: 2000
       sort: { fields: [fields___date], order: DESC }
     ) {
@@ -56,6 +56,7 @@ export const pageQuery = graphql`
             tags
             cover
             date
+            templateKey
           }
         }
       }

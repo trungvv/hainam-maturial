@@ -33,7 +33,7 @@ class queryWrapper extends Component {
                       type
                       owner
                     }
-                    fluid(maxWidth: 1240) {
+                    fluid(maxWidth: 2568) {
                       ...GatsbyImageSharpFluid
                       originalName
                     }

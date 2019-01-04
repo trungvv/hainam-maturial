@@ -7,7 +7,7 @@ shortDesc: >-
 date: 2018-11-23T17:00:00.000Z
 cover: /assets/p1.jpg
 slug: merry-christmas
-category: Chương trình xã hội
+category: social
 tags:
   - merry-christmas
 active: true

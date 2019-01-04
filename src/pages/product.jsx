@@ -57,6 +57,7 @@ export const productQuery = graphql`
             cover
             category
             shortDesc
+            templateKey
           }
         }
       }

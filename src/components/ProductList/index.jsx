@@ -14,6 +14,7 @@ class ProductList extends React.Component {
                 excerpt: product.node.excerpt,
                 date: product.node.fields.date,
                 slug: product.node.fields.slug,
+                // templateKey: postEdge.node.frontmatter.templateKey,
             });
         });
         return productList;

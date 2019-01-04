@@ -7,7 +7,7 @@ shortDesc: >-
 date: 2018-12-28T23:02:19.031Z
 cover: /assets/p2.jpg
 slug: bi-mat-quy-ong
-category: Phim
+category: film
 tags:
   - phim
   - sitcom

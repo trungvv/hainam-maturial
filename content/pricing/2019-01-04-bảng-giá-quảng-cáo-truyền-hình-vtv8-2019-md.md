@@ -3,7 +3,7 @@ templateKey: pricing
 title: Bảng Giá Quảng Cáo Truyền Hình VTV8 2019
 date: 2019-01-04T01:51:46.450Z
 cover: /assets/pricing-vtv8.jpg
-category: Truyền hình
+category: television
 tags:
   - Pricing truyền hình
 active: true

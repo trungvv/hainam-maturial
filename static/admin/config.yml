@@ -105,7 +105,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "post" }
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "hainamer" }
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Location", name: "location", widget: "string", hint: "Địa điểm/Thành phố"}
@@ -124,7 +124,13 @@ collections:
       - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
-      - {label: "Category", name: "category", widget: "select", options: ["Phim", "Chương trình tin tức", "Gameshows", "Chương trình xã hội", "Sản phẩm khác"]}
+      - {label: "Category", name: "category", widget: "select", options: 
+        - {label: "Phim", value: "film"}
+        - {label: "Chương trình tin tức", value: "news"}
+        - {label: "Gameshows", value: "gameshows"}
+        - {label: "Chương trình xã hội", value: "social"}
+        - {label: "Sản phẩm khác", value: "others"}
+      }
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Active", name: "active", widget: "boolean", default: true}
@@ -156,9 +162,14 @@ collections:
       # - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
-      - {label: "Category", name: "category", widget: "select", options: ["Báo điện tử", "Báo giấy", "Truyền hình", "OOH"]}
+      - {label: "Category", name: "category", widget: "select", options: 
+        - {label: "Báo điện tử", value: "e-news"}
+        - {label: "Báo giấy", value: "newspaper"}
+        - {label: "Truyền hình", value: "television"}
+        - {label: "OOH", value: "ooh"}
+      }
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Active", name: "active", widget: "boolean", default: true}
-      # - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
+      - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
   

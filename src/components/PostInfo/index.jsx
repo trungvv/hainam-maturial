@@ -24,7 +24,8 @@ class PostInfo extends Component {
         />
         <Link
           className="category-link"
-          to={`/categories/${_.kebabCase(post.category)}`}
+          // to={`/hainamer/${_.kebabCase(post.category)}`}
+          to={`/${post.templateKey}/${_.kebabCase(post.category)}`}
         >
           <CardTitle
             avatar={

@@ -48,7 +48,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 672
+              maxWidth: 2568,
             }
           },
           {
@@ -66,12 +66,12 @@ module.exports = {
         trackingId: config.siteGATrackingID
       }
     },
-    // {
-    //   resolve: "gatsby-plugin-nprogress",
-    //   options: {
-    //     color: "#c62828"
-    //   }
-    // },
+    {
+      resolve: "gatsby-plugin-nprogress",
+      options: {
+        color: "#c62828"
+      }
+    },
     
     "gatsby-plugin-sharp",
     {

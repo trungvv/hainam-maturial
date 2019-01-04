@@ -58,18 +58,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
-      // if(node.frontmatter.templateKey==="post") {
-      //   slug = `hainamer/${_.kebabCase(node.frontmatter.title)}`;
-      // }
-      // else if (node.frontmatter.templateKey==="product") {
-      //   slug = `product/${_.kebabCase(node.frontmatter.title)}`;
-      // }
-      // else if (node.frontmatter.templateKey==="service") {
-      //   slug = `service/${_.kebabCase(node.frontmatter.title)}`;
-      // }
-      // else if (node.frontmatter.templateKey==="pricing") {
-      //   slug = `pricing/${_.kebabCase(node.frontmatter.title)}`;
-      // }
       if(node.frontmatter.templateKey) {
         slug = node.frontmatter.templateKey + `/${_.kebabCase(node.frontmatter.title)}`;
       }
@@ -160,10 +148,10 @@ exports.createPages = ({ graphql, actions }) => {
           }
 
           if (edge.node.frontmatter.category) {
-            categorySet.add(edge.node.frontmatter.category);
+            categorySet.add({category: edge.node.frontmatter.category, templateKey: edge.node.frontmatter.templateKey});
           }
-          console.log("----slug:");
-          console.log(edge.node.fields.slug);
+          // console.log("----slug:");
+          // console.log(edge.node.fields.slug);
           let component, pathName;
           if (edge.node.frontmatter.templateKey === "home-page") {
             pathName = "/";
@@ -185,6 +173,8 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         const tagList = Array.from(tagSet);
+        // console.log ("-----> tagList:");
+        // console.log (tagList);
         tagList.forEach(tag => {
           createPage({
             path: `/tags/${_.kebabCase(tag)}/`,
@@ -194,14 +184,31 @@ exports.createPages = ({ graphql, actions }) => {
             }
           });
         });
-
+        
         const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
+        // console.log ("-----> category:");
+        // console.log (categoryList);
+        categoryList.forEach(item => {
+          let path = "";
+          if (item.templateKey == "post") {
+            path = `/hainamer/${_.kebabCase(item.category)}/`;
+          }
+          else if (item.templateKey == "product") {
+            path = `/product/${_.kebabCase(item.category)}/`;
+          }
+          else if (item.templateKey == "pricing") {
+            path = `/pricing/${_.kebabCase(item.category)}/`;
+          }
+          else {
+            path = `/categories/${_.kebabCase(item.category)}/`;
+          }
+          console.log ("-----> path:");
+          console.log (path);
           createPage({
-            path: `/categories/${_.kebabCase(category)}/`,
+            path,
             component: categoryPage,
             context: {
-              category
+              category: item.category
             }
           });
         });
