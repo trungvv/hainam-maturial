@@ -72,7 +72,7 @@ collections:
           - { label: "Pricing Title", name: "pricingTitle", widget: "string", hint: "Tiêu đề của vùng Báo giá" }
           - { label: "Pricing Button", name: "pricingBtn", widget: "string", hint: "Nội dung button báo giá" }
           - { label: "Contact Title", name: "pricingTitle", widget: "string", hint: "Tiêu đề của vùng Liên Hệ" }
-          - { label: "Contact SubTitle", name: "contactSSubtitle", widget: "string", hint: "Tiêu đề con của vùng Liên Hệ" }
+          - { label: "Contact SubTitle", name: "contactSubtitle", widget: "string", hint: "Tiêu đề con của vùng Liên Hệ" }
           - { 
               label: "Office", 
               name: "offices", 
