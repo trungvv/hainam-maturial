@@ -13,3 +13,15 @@
     width: 100px;
     height: 1px;
 }
+#ProductSection {
+    .slick-prev:before, .slick-next:before {
+        color: $gray-700;
+      }
+    .slick-prev {
+    left: -10px;
+    z-index: 1;
+    }
+    .slick-next {
+    right: -10px;
+    }
+}

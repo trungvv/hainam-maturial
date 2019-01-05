@@ -26,9 +26,9 @@ class ProductList extends React.Component {
                 <div className="container">
                     <div className="row">
                         {productList.map(product => (
-
-                            <ProductPreview key={product.title} productInfo={product} />
-
+                            <div className="col-lg-4 col-md-6 mt-4 mb-4">
+                                <ProductPreview key={product.title} productInfo={product} />
+                            </div>
                         ))}
                     </div>
                 </div>

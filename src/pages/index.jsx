@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import SEO from "../components/SEO";
@@ -13,7 +14,10 @@ import SectionContact from 'components/SectionContact';
 class Index extends React.Component {
   render() {
     // console.log(this.props.data.allMarkdownRemark)
-    const { frontmatter: bannerImage } = this.props.data.allMarkdownRemark.edges[0].node;
+    const { data } = this.props;
+    const { frontmatter: home } = data.homePageData.edges[0].node;
+    const { data: {productsHome}} = this.props;
+    // console.log(productsHome);
     return (
       <Layout location={this.props.location} title="Home">
         <div className="index-container">
@@ -24,8 +28,8 @@ class Index extends React.Component {
           </Helmet>
           <SEO />
 
-          <Banner bannerImage={bannerImage}/>
-          <SectionProduct />
+          <Banner bannerImage={home}/>
+          <SectionProduct productTitle={home.productTitle} productSubtitle={home.productSubtitle} productsHome={productsHome} />
           <SectionService />
           <SectionCustomer />
           <SectionPricing />
@@ -35,12 +39,18 @@ class Index extends React.Component {
     );
   }
 }
-
+Index.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+};
 export default Index;
 
 export const homepageQuery = graphql`
 query homePageData {
-	allMarkdownRemark (
+	homePageData: allMarkdownRemark (
     filter: { frontmatter: { templateKey: {eq: "home-page" }}}
   ) {
     edges {
@@ -55,6 +65,29 @@ query homePageData {
             linkType
             linkURL
           }
+          productTitle
+          productSubtitle
+          serviceTitle
+          serviceSubtitle
+          customerTitle
+          customers {
+            id
+            image
+            imageAlt
+            linkType
+            linkURL
+          }
+          pricingTitle
+          pricingBtn
+          contactSubtitle
+          offices {
+            id
+            office
+            address
+            phone
+            fax
+            hotline
+          }
           seo {
             browserTitle
             description
@@ -64,4 +97,6 @@ query homePageData {
       }
     }
   }
+
+...SectionProductFragment
 }`;

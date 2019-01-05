@@ -31,7 +31,7 @@ class ProductPreview extends React.Component {
         const { mobile } = this.state;
         const coverHeight = mobile ? 162 : 225;
         return (
-            <div className="col-lg-4 col-md-6 mt-4 mb-4">
+            // <div className="col-lg-4 col-md-6 mt-4 mb-4">
                 <div className="card" key={productInfo.title}>
                     <Link to={productInfo.path}>
                         <PostCover postNode={productInfo} coverHeight={coverHeight} />
@@ -40,7 +40,7 @@ class ProductPreview extends React.Component {
                         <Link to={productInfo.path}>
                             <h5 className="media-title">{productInfo.title}</h5>
                         </Link>
-                        <p className="card-subtitle">
+                        <p className="card-subtitle text-uppercase">
                             <small className="text-muted">{productInfo.category}</small>
                         </p>
                         <div className="overflow-hidden">
@@ -50,7 +50,7 @@ class ProductPreview extends React.Component {
                     
                 </div>
                 
-            </div>
+            // </div>
         );
     }
 }
