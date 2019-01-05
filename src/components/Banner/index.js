@@ -49,7 +49,7 @@ class Banner extends Component {
     const slides = items.map(item => {
       const postNode = {cover: item.image}; 
       return (
-          <div className="custom-banner" key={item.id}>
+          <div className="card" key={item.id}>
             {/* <img className="card-img-top" src={item.image} alt={item.imageAlt} /> */}
             <PostCover postNode={postNode} coverHeight={mobile}/>
           </div>
