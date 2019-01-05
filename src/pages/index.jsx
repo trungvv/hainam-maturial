@@ -16,8 +16,8 @@ class Index extends React.Component {
     // console.log(this.props.data.allMarkdownRemark)
     const { data } = this.props;
     const { frontmatter: home } = data.homePageData.edges[0].node;
-    const { data: {productsHome}} = this.props;
-    // console.log(productsHome);
+    const { data: {productsHome, servicesHome}} = this.props;
+    // console.log(servicesHome);
     return (
       <Layout location={this.props.location} title="Home">
         <div className="index-container">
@@ -30,7 +30,7 @@ class Index extends React.Component {
 
           <Banner bannerImage={home}/>
           <SectionProduct productTitle={home.productTitle} productSubtitle={home.productSubtitle} productsHome={productsHome} />
-          <SectionService />
+          <SectionService serviceTitle={home.serviceTitle} serviceSubtitle={home.serviceSubtitle} servicesHome={servicesHome}/>
           <SectionCustomer />
           <SectionPricing />
           <SectionContact />
@@ -99,4 +99,5 @@ query homePageData {
   }
 
 ...SectionProductFragment
+...SectionServiceFragment
 }`;

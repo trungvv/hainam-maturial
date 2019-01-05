@@ -60,10 +60,10 @@ const SectionProduct = ({productTitle=null, productSubtitle=null, productsHome})
     });
     }
 
-    const slides = (productList.length>0) ? productList.map(product => {
-
+    const slides = (productList.length>0) ? productList.map((product, i=0 )=> {
+      ++i;
       return (
-        <div className="col">
+        <div className="col" key={i}>
           <ProductPreview key={product.title} productInfo={product} />
         </div>
         
@@ -77,7 +77,7 @@ const SectionProduct = ({productTitle=null, productSubtitle=null, productsHome})
     ): {slides};
 
     return (
-      <div className="jumbotron bg-light mb-0 container" id="ProductSection">
+      <div className="jumbotron bg-light mb-0 container-fluid" id="ProductSection">
         <h1 className="display-4 text-center">
           {/* {t('product-title')} */}
           {productTitle}
@@ -89,7 +89,7 @@ const SectionProduct = ({productTitle=null, productSubtitle=null, productsHome})
         </p>
 
         <hr className="line bg-secondary" />
-        <div className="container-fluid">
+        <div className="container">
           {displaySlides}
       </div>
       </div>

@@ -21,7 +21,7 @@ class SocialLinks extends Component {
     );
 
     return (
-      <div className="social-links col">Share: 
+      <div className="social-links col"><small>Share: </small>
         <FacebookShareButton url={url} quote={postNode.excerpt}>
           <FacebookIcon round size={iconSize} />
           <FacebookShareCount url={url}>

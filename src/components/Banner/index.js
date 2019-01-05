@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import './style.scss'
 import PostCover from 'components/PostCover';
-
+import CustomLink from 'components/CustomLink';
 
 class Banner extends Component {
   constructor(props) {
@@ -50,8 +50,10 @@ class Banner extends Component {
       const postNode = {cover: item.image}; 
       return (
           <div className="card" key={item.id}>
-            {/* <img className="card-img-top" src={item.image} alt={item.imageAlt} /> */}
-            <PostCover postNode={postNode} coverHeight={mobile}/>
+            <CustomLink linkType={item.linkType} to={item.linkURL}>
+              <PostCover postNode={postNode} coverHeight={mobile}/>
+            </CustomLink>
+            
           </div>
 
       )
@@ -59,7 +61,7 @@ class Banner extends Component {
 
     return (
 
-      <div className="container-fluid"> 
+      <div className="container-fluid" id="HomeBanner"> 
         <Slider {...settings} className="row">
           {slides}
         </Slider>

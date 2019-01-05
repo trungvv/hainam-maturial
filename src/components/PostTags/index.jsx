@@ -8,7 +8,7 @@ class PostTags extends Component {
     const { tags } = this.props;
     return (
       <div className="col social-links">
-        <mini>Tags: </mini> {tags &&
+        <small>Tags: </small> {tags &&
           tags.map(tag => (
             <Link
               key={tag}

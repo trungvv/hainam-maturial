@@ -5,7 +5,8 @@
 //     max-height: 500px;
 //     background: black;
 // }
-.slick-prev:before, .slick-next:before {
+#HomeBanner {
+  .slick-prev:before, .slick-next:before {
     color: $gray-700;
     font-size: 30px;
   }
@@ -16,9 +17,10 @@
   .slick-next {
     right: 15px;
   }
-.slick-dots {
-  bottom: 18px;
-}
-.slick-dots li button:before{
-    font-size: 16px;
+  .slick-dots {
+    bottom: 18px;
   }
+  .slick-dots li button:before{
+      font-size: 16px;
+    }
+}
