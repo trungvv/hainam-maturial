@@ -52,7 +52,7 @@ customers:
     imageAlt: Sabeco
     linkType: external
     linkURL: 'http://www.sabeco.com.vn/'
-pricingTitle: Liên hệ
+pricingTitle: Báo giá
 pricingBtn: Xem chi tiết báo giá
 contactSubtitle: 'Chất lượng, Nhanh chóng, Tin cậy, liên hệ ngay để được phục vụ.'
 offices:

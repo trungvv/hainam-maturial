@@ -1,75 +1,14 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 // import { withNamespaces } from 'react-i18next'
-// import { Link } from 'gatsby'
+import PostCover from 'components/PostCover';
+import CustomLink from 'components/CustomLink';
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import './style.scss'
 
-const items = [
-  {
-    id: 1,
-    src: 'assets/customers-hp-logo.png',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    category: 'Customer',
-    title: 'Card title',
-    desc:
-      'his is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-  },
-  {
-    id: 2,
-    src: 'assets/customers-ichnhan-logo.png',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    category: 'Phim',
-    title: 'Card title',
-    desc:
-      'his is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-  },
-  {
-    id: 3,
-    src: 'assets/customers-namduoc-logo.png',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    category: 'Phim',
-    title: 'Card title',
-    desc:
-      'his is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-  },
-  {
-    id: 4,
-    src: 'assets/customers-pnj-logo.png',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    category: 'Phim',
-    title: 'Card title',
-    desc:
-      'his is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-  },
-  {
-    id: 5,
-    src: 'assets/customers-rmit-logo.png',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    category: 'Customer',
-    title: 'Card title',
-    desc:
-      'his is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-  },
-  {
-    id: 6,
-    src: 'assets/customers-sabeco.png',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    category: 'Phim',
-    title: 'Card title',
-    desc:
-      'his is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-  },
-]
-
 class SectionCustomer extends Component {
+  
   render() {
     const settings = {
       dots: false,
@@ -104,27 +43,44 @@ class SectionCustomer extends Component {
         },
       ],
     }
-    const { t } = this.props
-    const slides = items.map(item => {
+    // const settings = {
+    //   className: "center",
+    //   centerMode: true,
+    //   infinite: true,
+    //   centerPadding: "60px",
+    //   slidesToShow: 3,
+    //   speed: 500,
+    //   rows: 2,
+    //   slidesPerRow: 2
+    // };
+
+    const items = this.props.home.customers;
+    const slides = (items.length>0)? items.map((item, i=0) => {
+      ++i;
       return (
-        <div className="col" key={item.id}>
-          <img className="card-img-top" src={item.src} alt={item.desc} />
+        <div className="" key={i}>
+          {/* <img className="card-img-top" src={item.image} alt={item.imageAlt} /> */}
+          <CustomLink linkType={item.linkType} to={item.linkURL}>
+            {/* <PostCover postNode={{cover: item.image}} coverHeight={mobile}/> */}
+            <img className="card-img-top" src={item.image} alt={item.imageAlt} />
+          </CustomLink>
         </div>
       )
     })
-
+    : <p>Chưa có thông tin khách hàng</p>
+    // console.log(items);
     return (
       <div className="jumbotron bg-light mb-0" id="customers">
         <h1 className="display-4 text-center">
           {/* {t('customer-title')} */}
-          Khách hàng
+          {this.props.home.customerTitle}
         </h1>
 
         {/* <p className="lead text-center">{t('customer-subtitle')}</p> */}
 
         <hr className="line bg-secondary" />
         {/* <div className="container-fluid"> */}
-        <Slider {...settings} className="mt-sm-5 row">
+        <Slider {...settings} className="mt-sm-5">
           {slides}
         </Slider>
         {/* </div> */}

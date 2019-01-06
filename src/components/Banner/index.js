@@ -44,7 +44,7 @@ class Banner extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     }
-    const items = this.props.bannerImage.bannerImage;
+    const items = this.props.home.bannerImage;
     // console.log(items);
     const slides = items.map(item => {
       const postNode = {cover: item.image}; 

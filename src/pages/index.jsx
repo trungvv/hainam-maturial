@@ -13,6 +13,7 @@ import SectionPricing from 'components/SectionPricing';
 import SectionContact from 'components/SectionContact';
 class Index extends React.Component {
   render() {
+    
     // console.log(this.props.data.allMarkdownRemark)
     const { data } = this.props;
     const { frontmatter: home } = data.homePageData.edges[0].node;
@@ -28,11 +29,11 @@ class Index extends React.Component {
           </Helmet>
           <SEO />
 
-          <Banner bannerImage={home}/>
+          <Banner home={home}/>
           <SectionProduct productTitle={home.productTitle} productSubtitle={home.productSubtitle} productsHome={productsHome} />
           <SectionService serviceTitle={home.serviceTitle} serviceSubtitle={home.serviceSubtitle} servicesHome={servicesHome}/>
-          <SectionCustomer />
-          <SectionPricing />
+          <SectionCustomer home={home}/>
+          <SectionPricing home={home}/>
           <SectionContact />
         </div>
       </Layout>

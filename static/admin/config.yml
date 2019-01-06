@@ -130,7 +130,6 @@ collections:
         - {label: "Gameshows", value: "gameshows"}
         - {label: "Chương trình xã hội", value: "social"}
         - {label: "Sản phẩm khác", value: "others"}
-      }
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Active", name: "active", widget: "boolean", default: true}
@@ -167,7 +166,6 @@ collections:
         - {label: "Báo giấy", value: "newspaper"}
         - {label: "Truyền hình", value: "television"}
         - {label: "OOH", value: "ooh"}
-      }
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Active", name: "active", widget: "boolean", default: true}

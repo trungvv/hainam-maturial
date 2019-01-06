@@ -6,15 +6,15 @@ import './style.scss'
 class SectionPricing extends Component {
   render() {
     // const { t } = this.props
-
+    const home = this.props.home;
     return (
-      <div className="jumbotron container-fluid rounded-0 mb-0">
+      <div className="jumbotron container-fluid rounded-0 mb-0 bg-dark text-light">
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-6">
               <h3 className="display-4 ">
                 {/* {t('pricing-title')} */}
-                Báo giá
+                {home.pricingTitle}
               </h3>
 
               <p className="lead">
@@ -26,9 +26,9 @@ class SectionPricing extends Component {
 
             <div className="col-sm-12 col-md-6">
               <div className="mt-4">
-                <Link className="btn btn-secondary btn-lg" to="#">
+                <Link className="btn btn-secondary btn-lg" to="/pricing">
                   {/* {t('pricing-btn')} */}
-                  Xem chi tiết báo giá
+                  {home.pricingBtn}
                 </Link>
               </div>
             </div>
