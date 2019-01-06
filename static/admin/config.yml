@@ -124,12 +124,13 @@ collections:
       - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
-      - {label: "Category", name: "category", widget: "select", options: 
-        - {label: "Phim", value: "film"}
-        - {label: "Chương trình tin tức", value: "news"}
-        - {label: "Gameshows", value: "gameshows"}
-        - {label: "Chương trình xã hội", value: "social"}
-        - {label: "Sản phẩm khác", value: "others"}
+      - {label: "Category", name: "category", widget: "select", options: [
+          {label: "Phim", value: "film"},
+          {label: "Chương trình tin tức", value: "news"},
+          {label: "Gameshows", value: "gameshows"},
+          {label: "Chương trình xã hội", value: "social"},
+          {label: "Sản phẩm khác", value: "others"}
+      ]}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Active", name: "active", widget: "boolean", default: true}
@@ -161,11 +162,12 @@ collections:
       # - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Cover Image", name: "cover", widget: "image"}
-      - {label: "Category", name: "category", widget: "select", options: 
-        - {label: "Báo điện tử", value: "e-news"}
-        - {label: "Báo giấy", value: "newspaper"}
-        - {label: "Truyền hình", value: "television"}
-        - {label: "OOH", value: "ooh"}
+      - {label: "Category", name: "category", widget: "select", options: [
+          {label: "Báo điện tử", value: "e-news"},
+          {label: "Báo giấy", value: "newspaper"},
+          {label: "Truyền hình", value: "television"},
+          {label: "OOH", value: "ooh"}
+      ]}
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Active", name: "active", widget: "boolean", default: true}
