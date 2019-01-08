@@ -10,7 +10,7 @@ class SectionContact extends Component {
     const slides = (
       <div className="row mt-5">
         <div className="col-md-12 col-lg-4 ">
-          <div className="d-flex flex-column border-styled">
+          <div className="d-flex flex-column border-styled bg-white">
             <div className="p-2 mt-4">
               <h3 className="media-title title-center">
                 {/* {t('contact-headquarter')} */}
@@ -55,7 +55,7 @@ class SectionContact extends Component {
         </div>
 
         <div className="col-md-12 col-lg-4 ">
-          <div className="d-flex flex-column border-styled">
+          <div className="d-flex flex-column border-styled bg-white">
             <div className="p-2 mt-4">
               <h3 className="media-title title-center">
                 {/* {t('contact-office-hn')} */}
@@ -101,7 +101,7 @@ class SectionContact extends Component {
         </div>
 
         <div className="col-md-12 col-lg-4 ">
-          <div className="d-flex flex-column border-styled">
+          <div className="d-flex flex-column border-styled bg-white">
             <div className="p-2 mt-4">
               <h3 className="media-title title-center">
                 {/* {t('contact-office-hcm')} */}

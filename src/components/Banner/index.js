@@ -43,6 +43,7 @@ class Banner extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      autoplay: true,
     }
     const items = this.props.home.bannerImage;
     // console.log(items);

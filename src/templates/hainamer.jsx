@@ -83,7 +83,7 @@ export default class PostTemplate extends React.Component {
          
         <div className="row container mb-4">
           {/* Post Content Column */}
-          <div className="col-lg-8">
+          <div className="col-lg-8 pl-0 pr-0">
             <div className="post-page-contents">
               {/* <h1 className="">{post.title}</h1> */}
               <div className="pb-3">
@@ -113,9 +113,13 @@ export default class PostTemplate extends React.Component {
 
           </div>
           {/* Related Post Column */}
-          <div className="col-lg-4 bg-light">
-            <p>Related Post Column</p>
+          <div className="col-lg-4 pr-0">
+            <div className="post-page-contents">
+              <p>Related Post Column</p>
+            </div>
+            
           </div>
+
           {/* <PostSuggestions postNode={postNode} /> */}
         </div>
 

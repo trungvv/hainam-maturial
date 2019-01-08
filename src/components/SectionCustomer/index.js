@@ -16,6 +16,7 @@ class SectionCustomer extends Component {
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
+      autoplay: true,
       responsive: [
         {
           breakpoint: 992,
@@ -80,7 +81,7 @@ class SectionCustomer extends Component {
 
         <hr className="line bg-secondary" />
         {/* <div className="container-fluid"> */}
-        <Slider {...settings} className="mt-sm-5">
+        <Slider {...settings} className="mt-sm-5 container">
           {slides}
         </Slider>
         {/* </div> */}

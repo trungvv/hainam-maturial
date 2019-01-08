@@ -15,6 +15,7 @@
 #subcribe {
   z-index: -1;
   width: 100%;
+  
 }
 .subcribe-email {
   display: inline;
@@ -27,6 +28,14 @@
   border-top: 1px solid $gray-600;
   padding-top: 1rem;
   color: $gray-600;
+  a {
+    text-decoration: none;
+    color: $gray-600;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $white;
+  }
 }
 .footer-list-style {
   list-style-type:none;
@@ -34,6 +43,10 @@
   a {
     text-decoration: none;
     color: $white;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $red;
   }
   
 }

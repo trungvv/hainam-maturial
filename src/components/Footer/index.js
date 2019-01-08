@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CustomLink from 'components/CustomLink';
 import {
   faYoutube,
   faFacebook,
@@ -10,7 +11,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import './style.scss'
 
 const Footer = ({ author, title }) => (
-  <div className="container-fluid bg-primary footer">
+  <div className="container-fluid bg-primary footer" id="footer">
     <div className="container">
       <div className="row pt-5 pb-5">
         {/* Col 1 */}
@@ -71,18 +72,19 @@ const Footer = ({ author, title }) => (
     </div>
     <div className="row bg-primary footer-line text-footer-line">
       <div className="col ">
-        <p className="float-md-left">Bản quyền Hải Nam Media 2018</p>
+        <p className="float-md-left">Bản quyền <span className="text-white">Hải Nam Media</span> 2019</p>
       </div>
       <div className="col">
         <div className="d-flex flex-row-reverse">
           <div className="">
-            <FontAwesomeIcon icon={faFacebook} />
+          <CustomLink linkType="external" to="https://www.facebook.com/hainammedia.com.vn/"><FontAwesomeIcon icon={faFacebook} /></CustomLink>
+            
           </div>
           <div className="pr-2">
-            <FontAwesomeIcon icon={faYoutube} />
+          <CustomLink linkType="external" to="https://www.youtube.com/channel/UC9W4aExr7Xqtp6m4EqjSRXg"><FontAwesomeIcon icon={faYoutube} /> </CustomLink>
           </div>
           <div className="pr-2">
-            <FontAwesomeIcon icon={faPinterest} />
+          <CustomLink linkType="internal" to="#"> <FontAwesomeIcon icon={faPinterest} /> </CustomLink>
           </div>
         </div>
       </div>
