@@ -52,28 +52,28 @@ customers:
     imageAlt: Sabeco
     linkType: external
     linkURL: 'http://www.sabeco.com.vn/'
-pricingTitle: Báo giá
+pricingTitle: Liên hệ
 pricingBtn: Xem chi tiết báo giá
 contactSubtitle: 'Chất lượng, Nhanh chóng, Tin cậy, liên hệ ngay để được phục vụ.'
 offices:
-  - fax: 0236.3550.28
+  - address: '147 Thanh Thủy, Phường Thanh Bình, Quận Hải Châu, TP. Đà Nẵng'
+    fax: 0236.3550.28
     hotline: 0903.531.777
     id: '1'
     office: Trụ sở chính
     phone: 0236.3550.288 - 0236.3711.031
-    address: 147 Thanh Thủy, Phường Thanh Bình, Quận Hải Châu, TP. Đà Nẵng
-  - fax: 024.62875361
+  - address: Phòng 1012- Toà Nhà An Lạc. Ngõ 43 Phùng Khoang – Từ Liêm – Hà Nội
+    fax: 024.62875361
     hotline: 0912.825.126
     id: '2'
     office: VP Hà Nội
     phone: 024.62875362
-    address: Phòng 1012- Toà Nhà An Lạc. Ngõ 43 Phùng Khoang – Từ Liêm – Hà Nội
-  - fax: 028.730.48179
+  - address: 'Số 30 Đặng Tất. Phường Tân Định, Quận 1 – TP.HCM'
+    fax: 028.730.48179
     hotline: 0916.245.008
     id: '1'
     office: VP Hồ Chí Minh
     phone: 028.62730592
-    address: Số 30 Đặng Tất. Phường Tân Định, Quận 1 – TP.HCM
 seo:
   browserTitle: Hai Nam Media
   description: Công ty truyền thông Hải Nam Media.
