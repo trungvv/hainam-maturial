@@ -139,6 +139,15 @@ exports.createPages = ({ graphql, actions }) => {
 
         const tagSet = new Set();
         const categorySet = new Set();
+        // categorySet.add({category:'film', templateKey: 'product'});
+        // categorySet.add({category:'news', templateKey: 'product'});
+        // categorySet.add({category:'gameshows', templateKey: 'product'});
+        // categorySet.add({category:'social', templateKey: 'product'});
+        // categorySet.add({category:'others', templateKey: 'product'});
+        // categorySet.add({category:'e-news', templateKey: 'pricing'});
+        // categorySet.add({category:'newspaper', templateKey: 'pricing'});
+        // categorySet.add({category:'television', templateKey: 'pricing'});
+        // categorySet.add({category:'ooh', templateKey: 'pricing'});
         
         result.data.allMarkdownRemark.edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {

@@ -1,17 +1,15 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import Card from "react-md/lib/Cards";
-import CardText from "react-md/lib/Cards/CardText";
+import { Link, graphql } from "gatsby";
 import Layout from "../layout";
 import PostTags from "../components/PostTags";
 import PostCover from "../components/PostCover";
-import PostInfo from "../components/PostInfo";
 import SocialLinks from "../components/SocialLinks";
 
 import SEO from "../components/SEO";
+import moment from "moment";
+import _ from "lodash";
 import config from "../../data/SiteConfig";
-// import "./b16-tomorrow-dark.css";
 import "./post.scss";
 
 export default class PricingTemplate extends React.Component {
@@ -42,8 +40,8 @@ export default class PricingTemplate extends React.Component {
   render() {
     const { mobile } = this.state;
     const { slug } = this.props.pageContext;
-    const expanded = !mobile;
-    const postOverlapClass = mobile ? "post-overlap-mobile" : "post-overlap";
+    // const expanded = !mobile;
+    // const postOverlapClass = mobile ? "post-overlap-mobile" : "post-overlap";
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
     if (!post.id) {
@@ -62,46 +60,61 @@ export default class PricingTemplate extends React.Component {
             <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <header className="business-header">
-            <div className="container-fluid">
-              <div className="row container">
-                <div className="col-lg-12">
-                  <h1 className="display-3 text-center text-white mt-4">Business Name or Tagline</h1>
-                </div>
-              </div>
-            </div>
-          </header>
-   
-        <div className="row container mt-4 mb-4">
+
+        <header className="hn-bg-heading">
+          <div className="bg_cover">
+          <div className="container post-title hn-breadcrumbs ">
+            <h1 className="display-4 text-left text-white">{post.title}</h1>
+            <p>
+              <Link
+                className="text-danger text-uppercase"
+                // to={`/hainamer/${_.kebabCase(post.category)}`}
+                to={`/${post.templateKey}/${_.kebabCase(post.category)}`}
+              >
+                {post.category}
+              </Link>
+            </p>
+          </div>
+          </div>
+          
+        </header>
+         
+        <div className="row container mb-4">
           {/* Post Content Column */}
           <div className="col-lg-8">
-
-            <h1 className="">{post.title}</h1>
-            <PostInfo postNode={postNode} />
-            <PostCover
-              postNode={postNode}
-              coverHeight={coverHeight}
-            />
-
-            <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-            <hr />
-            <div className="row">
-              <PostTags tags={post.tags} className="col" />
-              <SocialLinks
-                postPath={slug}
-                postNode={postNode}
-                mobile={this.state.mobile}
-                className="col"
-              />
+            <div className="post-page-contents">
+              {/* <h1 className="">{post.title}</h1> */}
+              <div className="pb-3">
+                <PostCover
+                  postNode={postNode}
+                  coverHeight={coverHeight}
+                />
+              </div>
+              <div className="">
+                {`${moment(postNode.frontmatter.date).format(
+                  config.dateFormat
+                )}`}
+              </div>
+              {/* <PostInfo postNode={postNode} /> */}
+              <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+              <hr />
+              <div className="row">
+                <PostTags tags={post.tags} className="col" />
+                <SocialLinks
+                  postPath={slug}
+                  postNode={postNode}
+                  mobile={this.state.mobile}
+                  className="col"
+                />
+              </div>
             </div>
 
           </div>
           {/* Related Post Column */}
-          <div className="col-lg-4">
+          <div className="col-lg-4 bg-light">
             <p>Related Post Column</p>
           </div>
           {/* <PostSuggestions postNode={postNode} /> */}
-
         </div>
 
       </Layout>

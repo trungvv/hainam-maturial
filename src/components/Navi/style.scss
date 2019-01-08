@@ -4,3 +4,21 @@
     background-color: $white;
     border-bottom: 1px solid $gray-300;
 }
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: green;
+}
+.nav-link:focus {
+    color: $red !important;
+}
+.nav-link {
+    color: $black !important;
+}
+.nav-link {
+    .active {
+        color: #D7272D !important;
+    }
+    
+}
+.nav-link[class="nav-link"] {
+    color: blue;
+}

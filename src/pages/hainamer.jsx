@@ -26,6 +26,14 @@ class Hainamer extends React.Component {
             <link rel="canonical" href={`${config.siteUrl}/hainamer/`} />
             <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
+          <header className="hn-bg-heading">
+            <div className="bg_cover">
+            <div className="container post-title hn-breadcrumb">
+              <h1 className="display-4 text-uppercase text-left text-white">Hai Namer</h1>
+            </div>
+            </div>
+          </header>
+
           {content}
 
         </div>

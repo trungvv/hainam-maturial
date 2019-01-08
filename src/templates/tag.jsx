@@ -21,6 +21,13 @@ export default class TagTemplate extends React.Component {
             <link rel="canonical" href={`${config.siteUrl}/tags/${tag}`} />
             <link href="/logos/favicon.ico" rel="icon" type="image/x-icon" />
           </Helmet>
+          <header className="hn-bg-heading">
+            <div className="bg_cover">
+            <div className="container post-title hn-breadcrumb">
+              <h1 className="display-4 text-uppercase text-left text-white">{`Tagged in ${tag.charAt(0).toUpperCase() + tag.slice(1)}`}</h1>
+            </div>
+            </div>
+          </header>
           <PostListing postEdges={postEdges} />
         </div>
       </Layout>

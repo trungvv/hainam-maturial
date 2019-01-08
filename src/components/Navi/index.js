@@ -31,6 +31,7 @@ class Navi extends React.Component {
   }
   render() {
     const { location, title } = this.props
+    // console.log(location.pathname.includes('/pricing/'));
     return (
       // <div className="fixed-top">
       <Navbar className="navbar-expand-md navbar-light sticky-top">
@@ -63,7 +64,7 @@ class Navi extends React.Component {
               nav
               inNavbar
               className={
-                location.pathname === '/product/'
+                (location.pathname === '/product/' )
                   ? 'nav-item active'
                   : 'nav-item'
               }
@@ -109,7 +110,7 @@ class Navi extends React.Component {
             {/* Dịch vụ */}
             <NavItem
               className={
-                location.pathname === '#service' ? 'nav-item active' : 'nav-item'
+                ( location.pathname === '#service' || location.pathname.includes('/service/') )? 'nav-item active' : 'nav-item'
               }
             >
               <Link to="#service" className="nav-link">
@@ -122,7 +123,7 @@ class Navi extends React.Component {
             {/* Khách hàng */}
             <NavItem
               className={
-                location.pathname === '#customers'
+                (location.pathname === '/#customers/' || location.pathname.includes('/customers/')) 
                   ? 'nav-item active'
                   : 'nav-item'
               }
@@ -137,7 +138,7 @@ class Navi extends React.Component {
               nav
               inNavbar
               className={
-                location.pathname === '/pricing/'
+                ( location.pathname === '/pricing/' || location.pathname.includes('/pricing/'))
                   ? 'nav-item active'
                   : 'nav-item'
               }
