@@ -12,11 +12,12 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "content/pages/home/index.md"
+      - file: "content/vi/pages/home/index.md"
         label: "Home"
         name: "home"
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page" }
+          - {label: "Language", name: "language", widget: "hidden", default: "vi" }
           - {
               label: "Banner Images",
               name: "bannerImage",
@@ -101,11 +102,12 @@ collections:
             }
   - name: "hainamer"
     label: "HaiNamer"
-    folder: "content/post"
+    folder: "content/vi/post"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "hainamer" }
+      - {label: "Language", name: "language", widget: "hidden", default: "vi" }
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Location", name: "location", widget: "string", hint: "Địa điểm/Thành phố"}
@@ -115,11 +117,12 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "product"
     label: "Product"
-    folder: "content/product"
+    folder: "content/vi/product"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product" }
+      - {label: "Language", name: "language", widget: "hidden", default: "vi" }
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -137,11 +140,12 @@ collections:
       - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
   - name: "service"
     label: "Service"
-    folder: "content/service"
+    folder: "content/vi/service"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "service" }
+      - {label: "Language", name: "language", widget: "hidden", default: "vi" }
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -153,11 +157,12 @@ collections:
       - {label: "Hompage Position", name: "position", widget: "number", default: 1, valueType: "int", min: 1, max: 100}
   - name: "pricing"
     label: "Pricing"
-    folder: "content/pricing"
+    folder: "content/vi/pricing"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "pricing" }
+      - {label: "Language", name: "language", widget: "hidden", default: "vi" }
       - {label: "Title", name: "title", widget: "string"}
       # - {label: "Short Description", name: "shortDesc", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}

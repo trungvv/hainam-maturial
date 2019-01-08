@@ -81,7 +81,7 @@ export default class PricingTemplate extends React.Component {
          
         <div className="row container mb-4">
           {/* Post Content Column */}
-          <div className="col-lg-8">
+          <div className="col-lg-8 pl-0 pr-0">
             <div className="post-page-contents">
               {/* <h1 className="">{post.title}</h1> */}
               <div className="pb-3">

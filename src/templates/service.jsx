@@ -80,7 +80,7 @@ export default class PricingTemplate extends React.Component {
          
         <div className="row container mb-4">
           {/* Post Content Column */}
-          <div className="col-lg-12">
+          <div className="col-lg-12 pl-0 pr-0">
             <div className="post-page-contents">
               <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
               <hr />
