@@ -12,6 +12,8 @@ hello world
 
 # I am Hai Namer
 
+![](/assets/customers-hp-logo.png)
+
 ![Write in gatsby](/assets/starter-logo-1024.png "Write in gatsby")
 
 {{< youtube e_wS0WMDCak >}}
